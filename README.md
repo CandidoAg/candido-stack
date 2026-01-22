@@ -36,12 +36,28 @@ Asegúrate de tener instalado [pnpm](https://pnpm.io/) en tu sistema.
 ```bash
 # Instalar dependencias
 pnpm install
+```
 
 # Levantar servidor de desarrollo (http://localhost:4321)
+```bash
 pnpm dev
+```
 
 # Construir para producción
+```bash
 pnpm build
 
 # Previsualizar la construcción de producción
+```bash
 pnpm preview
+```
+
+---
+# Roadmap de Implementación
+- [ ] Configuración inicial de Astro + Tailwind.
+- [ ] Implementación de la sección "Sobre mí" con Gráfico de Radar.
+- [ ] Línea de tiempo interactiva para la trayectoria profesional (2019 - Presente).
+- [ ] Integración de la API de GitHub para mostrar métricas de proyectos personales.
+- [ ] Optimización SEO y generación de PDF descargable.
+
+*"El código limpio es el resultado de un aprendizaje constante."*
