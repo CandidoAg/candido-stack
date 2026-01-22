@@ -60,4 +60,5 @@ pnpm preview
 - [ ] Integración de la API de GitHub para mostrar métricas de proyectos personales.
 - [ ] Optimización SEO y generación de PDF descargable.
 
+---
 *"El código limpio es el resultado de un aprendizaje constante."*
