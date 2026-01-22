@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "name": "Cándido",
+    "role": "Desarrollador Fullstack",
+    "specialty": "Especializado en sistemas críticos.",
+    "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas.",
+    "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"]
+  },
+  "experience": [
+    {
+      "type": "work",
+      "company": "CM.com",
+      "position": "Full-stack Developer",
+      "period": "sept 2021 — Ahora",
+      "description": "Desarrollo Full Stack con Grails Framework.",
+      "tags": [
+        { "name": "Groovy", "category": "Lenguajes" },
+        { "name": "Grails", "category": "Backend" },
+        { "name": "JavaScript", "category": "Lenguajes" },
+        { "name": "MySQL", "category": "Bases de Datos" }
+      ]
+    },
+    {
+      "type": "work",
+      "company": "VIPERA Plc",
+      "position": "Software Developer",
+      "period": "dic 2019 — sept 2021",
+      "description": "Full Stack software developer with Grails Framework.",
+      "tags": [
+        { "name": "Groovy", "category": "Lenguajes" },
+        { "name": "Grails", "category": "Backend" },
+        { "name": "JavaScript", "category": "Lenguajes" },
+        { "name": "MySQL", "category": "Bases de Datos" }
+      ]
+    },
+    {
+      "type": "learning",
+      "company": "Universidad de Extremadura",
+      "position": "Grado en Ingeniería del Software",
+      "period": "2015 — 2019",
+      "description": "Especialización en arquitectura de software y algoritmos.",
+      "tags": []
+    }
+  ],
+  "projects": [
+    {
+      "title": "RetroVault",
+      "description": "E-commerce con Arquitectura Hexagonal y DDD. Comunicación asíncrona mediante Kafka y patrón Saga.",
+      "tags": [
+        { "name": "TypeScript", "category": "Lenguajes" },
+        { "name": "Node.js", "category": "Backend" },
+        { "name": "PostgreSQL", "category": "Bases de Datos" },
+        { "name": "Apache Kafka", "category": "Arquitectura e Infra" },
+        { "name": "Docker", "category": "Arquitectura e Infra" },
+        { "name": "Testcontainers", "category": "Testing" },
+        { "name": "Stripe", "category": "Backend" }
+      ],
+      "github": "https://github.com/CandidoAg/retrovault",
+      "link": "#",
+      "featured": true
+    },
+    {
+      "title": "NoteStack",
+      "description": "Gestor de tareas Cloud-Native con React Native. Sincronización en tiempo real y arquitectura segura.",
+      "tags": [
+        { "name": "React Native", "category": "Móvil" },
+        { "name": "Expo", "category": "Móvil" },
+        { "name": "Cloud Firestore", "category": "Bases de Datos" },
+        { "name": "TypeScript", "category": "Lenguajes" }
+      ],
+      "github": "https://github.com/CandidoAg/app-notas",
+      "link": "#",
+      "featured": false
+    },
+    {
+      "title": "Candido Stack (Portfolio 2026)",
+      "description": "Portafolio profesional de alto rendimiento. Enfoque en optimización de assets, accesibilidad certificada y arquitectura moderna.",
+      "tags": [
+        { "name": "Astro", "category": "Frameworks" },
+        { "name": "Tailwind CSS", "category": "Frontend" },
+        { "name": "TypeScript", "category": "Lenguajes" },
+        { "name": "Sharp", "category": "Herramientas" }
+      ],
+      "github": "https://github.com/CandidoAg/candido-stack",
+      "link": "#",
+      "featured": false
+    }
+  ]
+}

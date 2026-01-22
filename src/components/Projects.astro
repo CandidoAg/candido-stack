@@ -1,0 +1,118 @@
+---
+import cvEs from '../data/cv.json';
+import cvEn from '../data/cv-en.json';
+import { ExternalLink, Github } from 'lucide-react';
+import { Icon } from 'astro-icon/components';
+import { getIconName } from '../utils/icons';
+
+const projectsEs = cvEs.projects;
+const projectsEn = cvEn.projects;
+---
+
+<section id="proyectos" class="py-10 px-6 transition-colors duration-300">
+  <div class="max-w-5xl mx-auto
+    bg-zinc-50 border-zinc-200 
+    dark:bg-zinc-900/40 dark:border-white/5 
+    rounded-[3rem] p-8 md:p-16 relative overflow-hidden group shadow-sm dark:shadow-2xl">
+    
+    <div class="flex items-center gap-2 mb-16 justify-center">
+      <h2 
+        class="text-zinc-900 dark:text-white text-3xl font-bold tracking-tighter uppercase"
+        data-es="Proyectos"
+        data-en="Projects"
+      >
+        Proyectos
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+      {projectsEs.map((project, index) => {
+        const projectEn = projectsEn[index];
+        return (
+          <div class={project.featured ? "md:col-span-4" : "md:col-span-2"}>
+            <div class="group h-full p-8 
+              bg-white border-zinc-200 
+              dark:bg-zinc-900/40 dark:border-zinc-800 
+              rounded-[2.5rem] hover:border-cyan-500/30 dark:hover:border-zinc-700 
+              transition-all duration-500 flex flex-col justify-between shadow-sm dark:shadow-xl">
+              
+              <div>
+                <div class="flex justify-between items-start mb-6">
+                  <div class="p-4 
+                    bg-zinc-50 border-zinc-100 text-cyan-800
+                    dark:bg-zinc-950/50 dark:border-white/5 dark:text-cyan-500 
+                    rounded-2xl group-hover:scale-110 transition-all duration-500">
+                    {/* TODO Icono genérico, se debe cambiar cuando se desplieguen a la imagen por defecto del proyecto */}
+                  </div>
+                  
+                  <div class="flex gap-4 text-gray-600 dark:text-zinc-500 pt-2">
+                    {project.github && (
+                      <a href={project.github} target="_blank" class="hover:text-zinc-900 dark:hover:text-white transition-colors"
+                        aria-label="GitHub"
+                        title="GitHub">
+                        <Github size={22} />
+                      </a>
+                    )}
+                    {project.link !== "#" && (
+                      <a href={project.link} target="_blank" class="hover:text-zinc-900 dark:hover:text-white transition-colors"
+                        aria-label="External Link"
+                        title="External Link" >
+                        <ExternalLink size={22} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                <h3 
+                  class="text-2xl font-bold mb-3 tracking-tight text-zinc-900 dark:text-white group-hover:text-cyan-800 dark:group-hover:text-cyan-400 transition-colors"
+                  data-es={project.title}
+                  data-en={projectEn.title}
+                >
+                  {project.title}
+                </h3>
+                <p 
+                  class="text-zinc-600 dark:text-zinc-400 text-sm mb-8 leading-relaxed font-light"
+                  data-es={project.description}
+                  data-en={projectEn.description}
+                >
+                  {project.description}
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-4">
+                {project.tags.map((tag) => (
+                  <div class="flex flex-col items-center gap-2 group/item">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-2xl 
+                      bg-zinc-50 border-zinc-100
+                      dark:bg-zinc-950/60 dark:border-zinc-800 
+                      group-hover/item:border-cyan-500/50 group-hover/item:bg-cyan-500/5 
+                      transition-all duration-300">
+                      <Icon name={getIconName(tag.name)} class="w-6 h-6 text-gray-600 dark:text-zinc-500 group-hover/item:text-cyan-500 transition-colors" />
+                    </div>
+                    <span class="text-[9px] font-mono text-zinc-500 dark:text-zinc-300 uppercase tracking-tighter group-hover/item:text-zinc-900 dark:group-hover/item:text-white transition-colors">
+                      {tag.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </div>
+</section>
+
+<script>
+  const updateProjects = () => {
+    const lang = localStorage.getItem('lang') || 'es';
+    const elements = document.querySelectorAll('#proyectos [data-es]');
+    elements.forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text) el.textContent = text;
+    });
+  };
+
+  window.addEventListener('language-changed', updateProjects);
+  updateProjects();
+</script>

@@ -1,0 +1,103 @@
+---
+import cvEs from '../data/cv.json';
+import cvEn from '../data/cv-en.json';
+import { Icon } from 'astro-icon/components';
+import { getIconName } from '../utils/icons';
+
+// Función para agrupar habilidades por categoría
+const getGroupedSkills = (data: any) => {
+  const allTags = [
+    ...data.experience.flatMap((e: any) => e.tags),
+    ...data.projects.flatMap((p: any) => p.tags)
+  ];
+
+  return allTags.reduce((acc, curr) => {
+    if (!acc[curr.category]) acc[curr.category] = new Set();
+    acc[curr.category].add(curr.name);
+    return acc;
+  }, {} as Record<string, Set<string>>);
+};
+
+const groupedEs = getGroupedSkills(cvEs);
+const groupedEn = getGroupedSkills(cvEn);
+
+// Creamos un mapeo de categorías ES -> EN para que el script sepa qué cambiar
+const categories = Object.keys(groupedEs).map((catEs, index) => ({
+  es: catEs,
+  en: Object.keys(groupedEn)[index] || catEs,
+  skills: [...groupedEs[catEs]]
+}));
+---
+
+<section id="skills" class="py-10 px-6 transition-colors duration-300">
+  <div class="max-w-5xl mx-auto 
+    bg-zinc-50 border-zinc-200 
+    dark:bg-zinc-900/40 dark:border-white/5 
+    rounded-[3rem] p-8 md:p-16 relative overflow-hidden group shadow-sm dark:shadow-2xl">
+    
+    <div class="flex items-center gap-2 mb-16 justify-center">
+      <h2 
+        class="text-zinc-900 dark:text-white text-3xl font-bold tracking-tighter uppercase "
+        data-es="Stack Tecnológico"
+        data-en="Tech Stack"
+      >
+        Stack Tecnológico
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {categories.map((cat) => (
+        <div class="p-6 
+          bg-white border-zinc-200 
+          dark:bg-zinc-900/20 dark:border-white/5 
+          rounded-3xl group/card hover:border-cyan-500/20 transition-all shadow-sm dark:shadow-none">
+          
+          <h3 
+            class="text-cyan-800 dark:text-cyan-500 font-mono text-xs uppercase mb-6 italic tracking-widest"
+            data-es={`// ${cat.es}`}
+            data-en={`// ${cat.en}`}
+          >
+            // {cat.es}
+          </h3>
+          
+          <div class="flex flex-wrap gap-4">
+            {cat.skills.map(skillName => (
+              <div class="flex flex-col items-center gap-2 group/item">
+                <div class="w-12 h-12 flex items-center justify-center rounded-2xl 
+                  bg-zinc-50 border-zinc-100
+                  dark:bg-white/[0.03] dark:border-white/5 
+                  group-hover/item:border-cyan-500/50 group-hover/item:bg-cyan-500/5 
+                  transition-all duration-300">
+                  <Icon 
+                    name={getIconName(skillName)} 
+                    class="w-6 h-6 text-gray-600 dark:text-zinc-500 group-hover/item:text-cyan-500 transition-colors" 
+                  />
+                </div>
+                <span class="text-[10px] font-mono text-zinc-500 dark:text-zinc-300 uppercase group-hover/item:text-zinc-900 dark:group-hover/item:text-white transition-colors">
+                  {skillName}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const updateSkills = () => {
+    const lang = localStorage.getItem('lang') || 'es';
+    const elements = document.querySelectorAll('#skills [data-es]');
+    elements.forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text) el.textContent = text;
+    });
+  };
+
+  // Escuchar el evento personalizado o el click del botón
+  window.addEventListener('language-changed', updateSkills);
+  
+  // Ejecutar al cargar la página
+  updateSkills();
+</script>

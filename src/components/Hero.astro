@@ -1,0 +1,92 @@
+---
+import { getIconName } from '../utils/icons';
+import { Icon } from 'astro-icon/components';
+import cvEs from '../data/cv.json';
+import cvEn from '../data/cv-en.json';
+
+// Pasamos ambos datos al JSON para que el cliente los tenga
+const translations = {
+  es: cvEs.hero,
+  en: cvEn.hero
+};
+---
+
+<section class="min-h-[80vh] flex items-center justify-center px-6 py-5 transition-colors duration-300">
+  <div class="max-w-6xl w-full 
+    bg-zinc-50 border-zinc-200 
+    dark:bg-zinc-900/40 dark:border-white/5 
+    rounded-[3rem] p-8 md:p-16 relative overflow-hidden group shadow-xl transition-all duration-500">
+    
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-500/5 blur-[120px] -z-10"></div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <div>
+          <span class="text-cyan-800 dark:text-cyan-500 font-mono text-sm tracking-widest uppercase mb-4 block"
+                data-es={translations.es.role}
+                data-en={translations.en.role}>
+            {translations.es.role}
+          </span>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-zinc-900 dark:text-white text-3xl md:text-5xl font-bold tracking-tighter leading-tight"
+              data-es={translations.es.specialty}
+              data-en={translations.en.specialty}>
+            {translations.es.specialty}
+          </h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-lg md:text-xl max-w-lg leading-relaxed"
+              data-es={translations.es.description}
+              data-en={translations.en.description}>
+            {translations.es.description}
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 pt-4">
+          {translations.es.featuredSkills.map((skill) => (
+            <div class="flex items-center gap-2 px-3 py-1.5 
+              bg-white border-zinc-200 
+              dark:bg-zinc-950/50 dark:border-white/5 
+              rounded-lg shadow-sm transition-colors">
+              <Icon name={getIconName(skill)} class="w-4 h-4 text-zinc-500" />
+              <span class="text-xs font-mono text-zinc-500 dark:text-zinc-300 uppercase tracking-tighter">
+                {skill}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="relative flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-[400px] aspect-square rounded-[2rem] overflow-hidden 
+          bg-zinc-100 border-zinc-200
+          dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-950 dark:border-white/10 
+          shadow-2xl transition-all duration-500">
+          <img 
+            src="/images/avatar.webp" 
+            alt="Cándido Icon" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function updateTexts() {
+    const lang = localStorage.getItem('lang') || 'es';
+    // Buscamos todos los elementos que tengan traducciones guardadas
+    const i18nElements = document.querySelectorAll('[data-es]');
+    
+    i18nElements.forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text) el.textContent = text;
+    });
+  }
+
+  // Ejecutar al cargar
+  updateTexts();
+  // Escuchar si el selector de idioma recarga o cambia algo
+  document.addEventListener('astro:after-swap', updateTexts);
+</script>

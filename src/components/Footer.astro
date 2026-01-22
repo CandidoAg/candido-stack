@@ -1,0 +1,51 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-12 px-6 border-t border-zinc-100 dark:border-white/5 transition-colors duration-300">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+    
+    <div class="text-sm dark:text-zinc-300 font-mono">
+      © {currentYear} — 
+      <span 
+        data-es="Diseñado & Desarrollado por" 
+        data-en="Designed & Developed by"
+      >
+        Diseñado & Desarrollado por
+      </span> 
+      <span class="text-zinc-900 dark:text-zinc-300 font-bold">CandidoAg</span>
+    </div>
+    
+    <div class="flex gap-8 items-center">
+      <a 
+        href="https://github.com/CandidoAg" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="text-xs font-mono dark:text-zinc-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors uppercase tracking-widest"
+        data-es="GitHub"
+        data-en="GitHub"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const updateFooter = () => {
+    const lang = localStorage.getItem('lang') || 'es';
+    const elements = document.querySelectorAll('footer [data-es]');
+    elements.forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text) el.textContent = text;
+    });
+  };
+
+  // Escuchar el evento de cambio de idioma
+  window.addEventListener('language-changed', updateFooter);
+  
+  // Ejecutar al cargar
+  updateFooter();
+</script>

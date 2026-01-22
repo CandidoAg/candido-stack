@@ -1,8 +1,17 @@
 # 🚀 candido-stack | Portfolio & CV
 
-Este repositorio contiene mi portafolio profesional y currículo interactivo, construido con un enfoque en rendimiento, tipado fuerte y modernización de herramientas.
+Este repositorio contiene mi portafolio profesional y currículo interactivo, construido con un enfoque en rendimiento extremo (100% Lighthouse), tipado fuerte y modernización de herramientas.
 
 El objetivo de este proyecto es servir como nexo entre mi experiencia consolidada en sistemas críticos transaccionales y mi dominio de arquitecturas modernas distribuidas.
+
+---
+
+### 🏆 Lighthouse Score (Perfect Score)
+Actualmente, el proyecto alcanza la máxima puntuación en todas las métricas de Google Lighthouse tanto en Mobile como en Desktop:
+- **Performance:** 100% (Optimización de assets y carga diferida)
+- **Accessibility:** 100% (Contraste WCAG AA y semántica ARIA)
+- **Best Practices:** 100% (Seguridad y estándares modernos)
+- **SEO:** 100% (Metadatos y estructura de rastreo)
 
 ---
 
@@ -11,11 +20,10 @@ El objetivo de este proyecto es servir como nexo entre mi experiencia consolidad
 | Capa | Tecnología |
 | :--- | :--- |
 | **Framework** | [Astro](https://astro.build/) (SSG para máximo rendimiento) |
-| **Estilos** | [Tailwind CSS](https://tailwindcss.com/) (Diseño responsivo y Dark Mode) |
+| **Estilos** | [Tailwind CSS](https://tailwindcss.com/) (Dark Mode nativo y diseño responsivo) |
+| **Imágenes** | [Sharp](https://sharp.pixelplumbing.com/) (Pipeline de optimización WebP automático) |
 | **Lenguaje** | [TypeScript](https://www.typescriptlang.org/) (Tipado estricto para datos de proyectos) |
 | **Paquetes** | [pnpm](https://pnpm.io/) (Gestión eficiente de dependencias) |
-| **Gráficos** | [ApexCharts](https://apexcharts.com/) (Visualización de habilidades y trayectoria) |
-| **Animaciones** | [Framer Motion](https://www.framer.com/motion/) |
 
 ---
 
@@ -23,42 +31,40 @@ El objetivo de este proyecto es servir como nexo entre mi experiencia consolidad
 
 El proyecto sigue una estructura de **Data-Driven UI**, separando la información profesional de los componentes visuales:
 
-* `src/data/`: Contiene los archivos TS/JSON con la experiencia en empresas (CM.com, VIPERA) y side-projects de GitHub.
-* `src/components/`: Componentes atómicos reutilizables (SkillBadges, CardComponent).
-* `src/sections/`: Secciones principales de la One-Page (Hero, Experience, Skills, Projects).
+* `src/data/`: Fuentes de verdad (TS/JSON) con experiencia profesional (CM.com, VIPERA).
+* `src/components/`: Componentes atómicos (SkillBadges, TimelineItem).
+* `optimize-images.js`: Script personalizado para procesamiento de assets en el build.
 
 ---
 
 ### 🚀 Comandos de Desarrollo
-
-Asegúrate de tener instalado [pnpm](https://pnpm.io/) en tu sistema.
 
 ```bash
 # Instalar dependencias
 pnpm install
 ```
 
-# Levantar servidor de desarrollo (http://localhost:4321)
+# Levantar servidor de desarrollo
 ```bash
 pnpm dev
 ```
 
-# Construir para producción
+# Optimizar imágenes y construir para producción
 ```bash
 pnpm build
+```
 
-# Previsualizar la construcción de producción
+# Previsualizar el build de producción
 ```bash
 pnpm preview
 ```
 
 ---
 # Roadmap de Implementación
-- [ ] Configuración inicial de Astro + Tailwind.
-- [ ] Implementación de la sección "Sobre mí" con Gráfico de Radar.
-- [ ] Línea de tiempo interactiva para la trayectoria profesional (2019 - Presente).
-- [ ] Integración de la API de GitHub para mostrar métricas de proyectos personales.
-- [ ] Optimización SEO y generación de PDF descargable.
+[x] Configuración inicial Astro + Tailwind + pnpm.
+[x] Optimización de imágenes con Sharp (WebP).
+[x] Accesibilidad 100% y contraste corregido en Dark Mode.
+[ ] Configuración de CI/CD para despliegue automático.
 
 ---
 *"El código limpio es el resultado de un aprendizaje constante."*

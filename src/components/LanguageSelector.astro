@@ -1,0 +1,59 @@
+<div class="flex items-center bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-200 dark:border-white/5 rounded-full p-1 transition-colors">
+  <button 
+    id="btn-es"
+    class="lang-btn px-3 py-1 text-[10px] font-bold rounded-full transition-all"
+    data-lang="es"
+    aria-label="Español"
+    title="Español"
+  >
+    ES
+  </button>
+  <button 
+    id="btn-en"
+    class="lang-btn px-3 py-1 text-[10px] font-bold rounded-full transition-all"
+    data-lang="en"
+    aria-label="English"
+    title="English"
+  >
+    EN
+  </button>
+</div>
+
+<style>
+  /* Estilos para el estado activo (estilo similar a Sergio Morales) */
+  .lang-btn.active {
+    @apply bg-white text-zinc-900 dark:bg-zinc-700 dark:text-white shadow-sm;
+  }
+  .lang-btn:not(.active) {
+    @apply text-gray-600 hover:text-zinc-600 dark:hover:text-zinc-300;
+  }
+</style>
+
+<script>
+  function setupLanguage() {
+    const buttons = document.querySelectorAll('.lang-btn');
+    const currentLang = localStorage.getItem('lang') || 'es';
+
+    // Marcar el botón activo al cargar
+    buttons.forEach(btn => {
+      if (btn.getAttribute('data-lang') === currentLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+
+      btn.addEventListener('click', () => {
+        const newLang = btn.getAttribute('data-lang');
+        if (newLang && newLang !== localStorage.getItem('lang')) {
+          localStorage.setItem('lang', newLang);
+          // Recargamos para que Astro aplique los cambios del JSON
+          window.location.reload();
+        }
+      });
+    });
+  }
+
+  setupLanguage();
+  // Reiniciar si usas ViewTransitions
+  document.addEventListener('astro:after-swap', setupLanguage);
+</script>
