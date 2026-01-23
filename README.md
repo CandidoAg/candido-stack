@@ -55,7 +55,7 @@ pnpm preview
 - [x] Configuración inicial Astro + Tailwind + pnpm.
 - [x] Optimización de imágenes con Sharp (WebP).
 - [x] Accesibilidad 100% y contraste corregido en Dark Mode.
-- [ ] Configuración de CI/CD para despliegue automático.
+- [x] Configuración de CI/CD para despliegue automático.
 
 ---
 *"El código limpio es el resultado de un aprendizaje constante."*
