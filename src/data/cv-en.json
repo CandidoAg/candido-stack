@@ -1,24 +1,32 @@
 {
   "hero": {
     "name": "Cándido",
-    "role": "Fullstack Developer",
+    "role": "Full stack Developer",
     "specialty": "Specialized in critical systems.",
     "description": "My approach combines backend robustness with the agility of modern architectures.",
     "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"],
-    "about": "I am a full-stack developer with experience in creating robust and scalable applications. I specialize in backend development using the Grails Framework and have a strong interest in modern architectures such as microservices and asynchronous events. My goal is to design efficient solutions that meet business requirements and deliver an exceptional user experience."
+    "about": [
+      {"greeting": "Hello! I'm <span class='highlight'>Cándido Ag.</span>"},
+      {"paragraph1": "<span class='highlight'>Full stack</span> Developer with a solid focus on creating <span class='highlight'>scalable and secure</span> applications. My professional journey has centered on developing <span class='highlight'>critical platforms</span> for managing government procedures and international consular services."},
+      {"paragraph2": "I have built complex workflows for the acquisition of official documents and visas, ensuring <span class='highlight'>data integrity</span> in high-security environments and integrating large-scale financial systems such as <span class='highlight'>payment gateways</span> and <span class='highlight'>SAP</span> ecosystems."},
+      {"paragraph3": "Outside of my professional environment, I am passionate about exploring modern architectures. I apply patterns like <span class='highlight'>Hexagonal Architecture</span> and <span class='highlight'>DDD</span> in my personal projects, experimenting with <span class='highlight'>cloud-native</span> technologies and asynchronous messaging systems like <span class='highlight'>Kafka</span>."}
+    ]  
   },
   "experience": [
     {
       "type": "work",
       "company": "CM.com",
-      "position": "Full-stack Developer",
+      "position": "Full stack Developer",
       "period": "Sept 2021 — Present",
       "description": "Development and maintenance of a critical large-scale government services platform. Responsible for implementing complete end-to-end user flows, from the interactive frontend to the backend logic. Key role in the integration of financial systems and proprietary payment gateways, ensuring the reliability of international transactions.",
       "tags": [
-        { "name": "Groovy", "category": "Languages" },
-        { "name": "Grails", "category": "Fullstack" },
         { "name": "JavaScript", "category": "Languages" },
-        { "name": "MySQL", "category": "Databases" }
+        { "name": "Groovy", "category": "Languages" },
+        { "name": "MySQL", "category": "Databases" },
+        { "name": "HTML5", "category": "Frontend"},
+        { "name": "CSS3", "category": "Frontend" },
+        { "name": "Bootstrap", "category": "Frontend" },
+        { "name": "Grails", "category": "Fullstack" }
       ]
     },
     {
@@ -29,15 +37,18 @@
       "description": "Implementation of web solutions for managing consular and administrative procedures. Development of advanced monitoring dashboards and internal administration tools. Specialized in data synchronization with SAP business systems and in optimizing document request processes for high-security environments.",
       "tags": [
         { "name": "Groovy", "category": "Languages" },
-        { "name": "Grails", "category": "Fullstack" },
         { "name": "JavaScript", "category": "Languages" },
-        { "name": "MySQL", "category": "Databases" }
+        { "name": "MySQL", "category": "Databases" },
+        { "name": "HTML5", "category": "Frontend"},
+        { "name": "CSS3", "category": "Frontend" },
+        { "name": "Bootstrap", "category": "Frontend" },
+        { "name": "Grails", "category": "Fullstack" }
       ]
     },
     {
       "type": "learning",
       "company": "University of Extremadura",
-      "position": "Software Engineering Degree",
+      "position": "Degree in Computer Engineering in Software Engineering",
       "period": "2015 — 2019",
       "description": "Specialization in software architecture and algorithms.",
       "tags": []
@@ -49,13 +60,19 @@
       "description": "E-commerce with Hexagonal Architecture and DDD. Asynchronous communication via Kafka and Saga pattern.",
       "tags": [
         { "name": "TypeScript", "category": "Languages" },
-        { "name": "Node.js", "category": "Tools" },
         { "name": "PostgreSQL", "category": "Databases" },
         { "name": "Apache Kafka", "category": "Infrastructure" },
         { "name": "Docker", "category": "Infrastructure" },
+        { "name": "Vercel", "category": "Infrastructure" },
         { "name": "Vitest", "category": "Testing" },
         { "name": "Testcontainers", "category": "Testing" },
-        { "name": "Stripe", "category": "Tools" }
+        { "name": "Node.js", "category": "Tools" },
+        { "name": "Stripe", "category": "Tools" },
+        { "name": "Prisma", "category": "Tools" },
+        { "name": "Zod", "category": "Tools" },
+        { "name": "pnpm", "category": "Tools" },
+        { "name": "Turborepo", "category": "Tools" },
+        { "name": "Vite", "category": "Tools" }
       ],
       "github": "https://github.com/CandidoAg/retrovault",
       "link": "#",
@@ -65,10 +82,10 @@
       "title": "NoteStack",
       "description": "Cloud-Native task manager with React Native. Real-time synchronization and secure architecture.",
       "tags": [
-        { "name": "React Native", "category": "Mobile" },
-        { "name": "Expo", "category": "Tools" },
+        { "name": "TypeScript", "category": "Languages" },
         { "name": "Cloud Firestore", "category": "Databases" },
-        { "name": "TypeScript", "category": "Languages" }
+        { "name": "React Native", "category": "Mobile" },
+        { "name": "Expo", "category": "Tools" }
       ],
       "github": "https://github.com/CandidoAg/app-notas",
       "link": "#",
@@ -84,7 +101,7 @@
         { "name": "Sharp", "category": "Tools" }
       ],
       "github": "https://github.com/CandidoAg/candido-stack",
-      "image": "/images/portfolio-image",
+      "image": "/images/portfolio",
       "link": "https://candido-stack.vercel.app/",
       "featured": false
     }

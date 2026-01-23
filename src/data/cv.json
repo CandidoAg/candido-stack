@@ -1,13 +1,13 @@
 {
   "hero": {
     "name": "Cándido",
-    "role": "Desarrollador Fullstack",
+    "role": "Desarrollador Full stack",
     "specialty": "Especializado en sistemas críticos.",
     "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas.",
     "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"],
     "about": [
       {"greeting": "¡Hola! Soy <span class='highlight'>Cándido Ag.</span>"},
-      {"paragraph1": "Desarrollador <span class='highlight'>Full Stack</span> con un enfoque sólido en la creación de aplicaciones <span class='highlight'>escalables y seguras</span>. Mi trayectoria profesional se ha centrado en el desarrollo de <span class='highlight'>plataformas críticas</span> para la gestión de trámites gubernamentales y servicios consulares a nivel internacional."},
+      {"paragraph1": "Desarrollador <span class='highlight'>Full stack</span> con un enfoque sólido en la creación de aplicaciones <span class='highlight'>escalables y seguras</span>. Mi trayectoria profesional se ha centrado en el desarrollo de <span class='highlight'>plataformas críticas</span> para la gestión de trámites gubernamentales y servicios consulares a nivel internacional."},
       {"paragraph2": "He construido flujos complejos para la adquisición de documentos oficiales y visados, asegurando la <span class='highlight'>integridad de los datos</span> en entornos de alta seguridad e integrando sistemas financieros de gran envergadura como <span class='highlight'>pasarelas de pago</span> y ecosistemas <span class='highlight'>SAP</span>."},
       {"paragraph3": "Fuera del entorno profesional, me apasiona explorar arquitecturas modernas. Aplico patrones como <span class='highlight'>Arquitectura Hexagonal</span> y <span class='highlight'>DDD</span> en mis proyectos personales, experimentando con tecnologías <span class='highlight'>cloud-native</span> y sistemas de mensajería asíncrona como <span class='highlight'>Kafka</span>."}
     ]
@@ -16,33 +16,39 @@
     {
       "type": "work",
       "company": "CM.com",
-      "position": "Fullstack Developer",
-      "period": "sept 2021 — Ahora",
-      "description": "Desarrollo y mantenimiento de una plataforma crítica de servicios gubernamentales a gran escala. Responsable de la implementación de flujos completos de usuario (end-to-end), desde el frontend interactivo hasta la lógica de backend. Trabajo clave en la integración de sistemas financieros y pasarelas de pago propietarias, garantizando la fiabilidad de las transacciones internacionales.",
+      "position": "Desarrollador Full stack",
+      "period": "Sept 2021 — Presente",
+      "description": "Desarrollo y mantenimiento de una plataforma crítica de servicios gubernamentales a gran escala. Responsable de implementar flujos de usuarios completos de extremo a extremo, desde la interfaz interactiva hasta la lógica del backend. Papel clave en la integración de sistemas financieros y pasarelas de pago propias, garantizando la fiabilidad de las transacciones internacionales.",
       "tags": [
-        { "name": "Groovy", "category": "Lenguajes" },
-        { "name": "Grails", "category": "Fullstack" },
         { "name": "JavaScript", "category": "Lenguajes" },
-        { "name": "MySQL", "category": "Bases de Datos" }
+        { "name": "Groovy", "category": "Lenguajes" },
+        { "name": "MySQL", "category": "Bases de datos" },
+        { "name": "HTML5", "category": "Frontend"},
+        { "name": "CSS3", "category": "Frontend" },
+        { "name": "Bootstrap", "category": "Frontend" },
+        { "name": "Grails", "category": "Fullstack" }
       ]
     },
     {
       "type": "work",
       "company": "VIPERA Plc",
-      "position": "Fullstack Developer",
-      "period": "dic 2019 — sept 2021",
-      "description": "Implementación de soluciones web para la gestión de trámites consulares y administrativos. Desarrollo de paneles de monitorización avanzada y herramientas de administración interna. Especializado en la sincronización de datos con sistemas empresariales SAP y en la optimización de procesos de solicitud de documentos para entornos de alta seguridad.",
+      "position": "Desarrollador de Software",
+      "period": "Dic 2019 — Sept 2021",
+      "description": "Implementación de soluciones web para la gestión de trámites consulares y administrativos. Desarrollo de paneles de monitoreo avanzados y herramientas de administración interna. Especializado en sincronización de datos con sistemas empresariales SAP y en optimización de procesos de solicitud de documentos en entornos de alta seguridad.",
       "tags": [
         { "name": "Groovy", "category": "Lenguajes" },
-        { "name": "Grails", "category": "Fullstack" },
         { "name": "JavaScript", "category": "Lenguajes" },
-        { "name": "MySQL", "category": "Bases de Datos" }
+        { "name": "MySQL", "category": "Bases de datos" },
+        { "name": "HTML5", "category": "Frontend"},
+        { "name": "CSS3", "category": "Frontend" },
+        { "name": "Bootstrap", "category": "Frontend" },
+        { "name": "Grails", "category": "Fullstack" }
       ]
     },
     {
       "type": "learning",
       "company": "Universidad de Extremadura",
-      "position": "Grado en Ingeniería del Software",
+      "position": "Grado en Ingeniería Informática en Ingeniería del Software",
       "period": "2015 — 2019",
       "description": "Especialización en arquitectura de software y algoritmos.",
       "tags": []
@@ -54,13 +60,19 @@
       "description": "E-commerce con Arquitectura Hexagonal y DDD. Comunicación asíncrona mediante Kafka y patrón Saga.",
       "tags": [
         { "name": "TypeScript", "category": "Lenguajes" },
-        { "name": "Node.js", "category": "Herramientas" },
-        { "name": "PostgreSQL", "category": "Bases de Datos" },
+        { "name": "PostgreSQL", "category": "Bases de datos" },
         { "name": "Apache Kafka", "category": "Infraestructura" },
         { "name": "Docker", "category": "Infraestructura" },
+        { "name": "Vercel", "category": "Infraestructura" },
         { "name": "Vitest", "category": "Testing" },
         { "name": "Testcontainers", "category": "Testing" },
-        { "name": "Stripe", "category": "Herramientas" }
+        { "name": "Node.js", "category": "Herramientas" },
+        { "name": "Stripe", "category": "Herramientas" },
+        { "name": "Prisma", "category": "Herramientas" },
+        { "name": "Zod", "category": "Herramientas" },
+        { "name": "pnpm", "category": "Herramientas" },
+        { "name": "Turborepo", "category": "Herramientas" },
+        { "name": "Vite", "category": "Herramientas" }
       ],
       "github": "https://github.com/CandidoAg/retrovault",
       "link": "#",
@@ -68,12 +80,12 @@
     },
     {
       "title": "NoteStack",
-      "description": "Gestor de tareas Cloud-Native con React Native. Sincronización en tiempo real y arquitectura segura.",
+      "description": "Gestor de tareas cloud-native con React Native. Sincronización en tiempo real y arquitectura segura.",
       "tags": [
-        { "name": "React Native", "category": "Móviles" },
-        { "name": "Expo", "category": "Herramientas" },
-        { "name": "Cloud Firestore", "category": "Bases de Datos" },
-        { "name": "TypeScript", "category": "Lenguajes" }
+        { "name": "TypeScript", "category": "Lenguajes" },
+        { "name": "Cloud Firestore", "category": "Bases de datos" },
+        { "name": "React Native", "category": "Movil" },
+        { "name": "Expo", "category": "Herramientas" }
       ],
       "github": "https://github.com/CandidoAg/app-notas",
       "link": "#",
@@ -81,7 +93,7 @@
     },
     {
       "title": "Candido Stack",
-      "description": "Portafolio profesional de alto rendimiento. Enfoque en optimización de assets, accesibilidad certificada y arquitectura moderna.",
+      "description": "Portfolio profesional de alto rendimiento. Enfocado en optimización de activos, accesibilidad certificada y arquitectura moderna.",
       "tags": [
         { "name": "Astro", "category": "Fullstack" },
         { "name": "Tailwind CSS", "category": "Frontend" },
