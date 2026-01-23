@@ -7,10 +7,12 @@ import ThemeToggle from './ThemeToggle.astro';
   <nav class="mx-auto pointer-events-auto
     bg-white/70 border-b border-zinc-200 shadow-xl
     dark:bg-zinc-950/70 dark:border-white/10 
-    backdrop-blur-xl px-5 py-2.5 flex items-center justify-between transition-all duration-300">
-    <div class="max-w-5xl w-full flex items-center justify-between mx-auto">
-      <div class="min-w-fit">
-        <a href="/" class="flex items-center gap-3 group transition-transform active:scale-95">
+    backdrop-blur-xl px-4 py-2.5 transition-all duration-300">
+    
+    <div class="max-w-5xl w-full flex items-center justify-between mx-auto gap-4">
+      
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center gap-2 md:gap-3 group transition-transform active:scale-95">
           <div class="relative w-8 h-8 rounded-full overflow-hidden border border-zinc-200 dark:border-white/10 shadow-sm">
             <img 
               src="/favicon-light.svg" 
@@ -23,43 +25,76 @@ import ThemeToggle from './ThemeToggle.astro';
               class="w-full h-full object-cover hidden dark:block group-hover:scale-110 transition-transform duration-300"
             />
           </div>
-          
-          <span  class="text-sm font-bold text-zinc-900 dark:text-white tracking-tight">
+          <span class="text-sm font-bold text-zinc-900 dark:text-white tracking-tight hidden xs:block">
             Cándido Ag.
           </span>
         </a>
       </div>
 
-      <div class="max-w-3xl mx-auto w-full flex items-center justify-center">
-        <nav class="flex items-center gap-3">
-            <a href="#home" class="text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-              data-es="Inicio" data-en="Home">
-              Home
-            </a>
-            <a href="#skills" class="text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-              data-es="Skills" data-en="Skills">
-              Skills
-            </a>
-            <a href="#trayectoria" class="text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-              data-es="Experiencia" data-en="Experience">
-              Experience
-            </a>
-            <a href="#proyectos" class="text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-              data-es="Proyectos" data-en="Projects">
-              Projects
-            </a>
-            <a href="#about" class="text-sm text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-              data-es="Sobre mí" data-en="About">
-              About
-            </a>
-        </nav>
+      <div class="hidden md:flex items-center justify-center overflow-hidden">
+        <div class="flex items-center gap-4 lg:gap-6">
+            <a href="#home" class="nav-link" data-es="Inicio" data-en="Home">Home</a>
+            <a href="#skills" class="nav-link" data-es="Skills" data-en="Skills">Skills</a>
+            <a href="#trayectoria" class="nav-link" data-es="Experiencia" data-en="Experience">Experience</a>
+            <a href="#proyectos" class="nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
+            <a href="#about" class="nav-link" data-es="Sobre mí" data-en="About">About</a>
+        </div>
       </div>
 
-      <div class="flex max-w-4xl items-center gap-2">
+      <div class="flex items-center gap-1 md:gap-2 flex-shrink-0">
         <LanguageSelector />
         <div class="w-px h-4 bg-zinc-200 dark:bg-white/10 mx-1"></div>
         <ThemeToggle />
       </div>
+      
     </div>
+
+    <div class="flex md:hidden items-center justify-center gap-4 mt-2 border-t border-zinc-100 dark:border-white/5 pt-2 overflow-x-auto no-scrollbar">
+        <a href="#home" class="nav-link" data-es="Inicio" data-en="Home">Home</a>
+        <a href="#skills" class="nav-link" data-es="Skills" data-en="Skills">Skills</a>
+        <a href="#trayectoria" class="nav-link" data-es="Experiencia" data-en="Experience">Experience</a>
+        <a href="#proyectos" class="nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
+        <a href="#about" class="nav-link" data-es="Sobre mí" data-en="About">About</a>
+    </div>
+
   </nav>
 </header>
+
+<style>
+  .nav-link {
+    @apply text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors whitespace-nowrap font-medium;
+  }
+  
+  .nav-link-mobile {
+    @apply text-[11px] uppercase tracking-wider font-bold text-zinc-500 dark:text-zinc-500 hover:text-cyan-600 transition-colors whitespace-nowrap px-1;
+  }
+
+  /* Esconder la barra de scroll pero mantener funcionalidad */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Breakpoint extra para el nombre del logo */
+  @media (min-width: 400px) {
+    .xs\:block { display: block; }
+  }
+</style>
+
+<script>
+  // Script de traducción para el header
+  const updateHeader = () => {
+    const lang = localStorage.getItem('lang') || 'es';
+    document.querySelectorAll('header [data-es]').forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text) el.textContent = text;
+    });
+  };
+
+  window.addEventListener('language-changed', updateHeader);
+  updateHeader();
+  document.addEventListener('astro:after-swap', updateHeader);
+</script>
