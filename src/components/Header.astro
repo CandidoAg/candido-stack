@@ -5,18 +5,36 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <header class="fixed top-0 left-0 w-full z-50 pointer-events-none">
   <nav class="mx-auto pointer-events-auto
-    bg-white/70 border border-zinc-200 shadow-lg
+    bg-white/70 border border-zinc-200 shadow-xl
     dark:bg-zinc-950/70 dark:border-white/10 
-    backdrop-blur-xl px-6 py-3
-    flex items-center justify-between transition-all duration-300">
-    
-    <div class="flex items-center gap-3">
-       <span class="text-sm font-bold text-zinc-900 dark:text-white">Cándido Ag.</span>
-    </div>
+    backdrop-blur-xl px-5 py-2.5 flex items-center justify-between transition-all duration-300">
+    <div class="max-w-5xl w-full flex items-center justify-between mx-auto">
+      <div class="max-w-4xl mx-auto w-full">
+        <a href="/" class="flex items-center gap-3 group transition-transform active:scale-95">
+          <div class="relative w-8 h-8 rounded-full overflow-hidden border border-zinc-200 dark:border-white/10 shadow-sm">
+            <img 
+              src="/favicon-light.svg" 
+              alt="CAC Logo" 
+              class="w-full h-full object-cover dark:hidden group-hover:scale-110 transition-transform duration-300"
+            />
+            <img 
+              src="/favicon-dark.svg" 
+              alt="CAC Logo" 
+              class="w-full h-full object-cover hidden dark:block group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          
+          <span class="text-sm font-bold text-zinc-900 dark:text-white tracking-tight">
+            Cándido Ag.
+          </span>
+        </a>
+      </div>
 
-    <div class="flex items-center gap-4">
-		<LanguageSelector />
-    <ThemeToggle />
+      <div class="flex items-center gap-2">
+        <LanguageSelector />
+        <div class="w-px h-4 bg-zinc-200 dark:bg-white/10 mx-1"></div>
+        <ThemeToggle />
+      </div>
     </div>
   </nav>
 </header>

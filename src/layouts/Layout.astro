@@ -2,7 +2,10 @@
 import '@fontsource-variable/inter';
 import '../styles/global.css';
 
-interface Props { title: string; }
+interface Props { 
+  title: string; 
+}
+
 const { title } = Astro.props;
 ---
 
@@ -11,27 +14,53 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" id="favicon-link" href="/favicon-light.svg" />        
         <title>{title}</title>
         <meta name="description" content="Bienvenido al Candido Stack. Explora mis proyectos de desarrollo web, habilidades técnicas y mi trayectoria como desarrollador Full Stack." />
-		<script is:inline>
-			const theme = (() => {
-				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-				return localStorage.getItem('theme');
-				}
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				return 'dark';
-				}
-				return 'light';
-			})();
+        
+        <script is:inline>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const themeParam = params.get('theme');
+            const langParam = params.get('lang');
+            
+            let lang = 'es';
+            if (langParam === 'es' || langParam === 'en') {
+                localStorage.setItem('lang', langParam);
+                lang = langParam;
+            } else {
+                lang = localStorage.getItem('lang') || 'es';
+            }
+            document.documentElement.lang = lang;
 
-			if (theme === 'light') {
-				document.documentElement.classList.remove('dark');
-			} else {
-				document.documentElement.classList.add('dark');
-			}
+            const getInitialTheme = () => {
+                if (themeParam === 'dark' || themeParam === 'light') {
+                    localStorage.setItem('theme', themeParam);
+                    return themeParam;
+                }
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme) return savedTheme;
+                
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            const theme = getInitialTheme();
+            
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            const favicon = document.getElementById('favicon-link');
+            if (favicon) {
+                favicon.href = theme === 'dark' ? '/favicon-dark.svg' : '/favicon-light.svg';
+            }
+        })();
         </script>
     </head>
     <body class="bg-white text-zinc-900 dark:bg-[#030303] dark:text-gray-400 antialiased selection:bg-cyan-500/30 transition-colors duration-300"> 
+        
         <div class="fixed inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:32px_32px]"></div>
     
         <main class="pt-16 md:pt-24">
@@ -39,10 +68,16 @@ const { title } = Astro.props;
         </main>
 
         <script>
-            const observerOptions = { threshold: 0.1 };
+            const observerOptions = { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting) entry.target.classList.add('active');
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
                 });
             }, observerOptions);
 
@@ -53,9 +88,14 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-    html { font-family: 'Inter Variable', sans-serif; }
+    :root {
+        --font-inter: 'Inter Variable', sans-serif;
+    }
+
+    html { 
+        font-family: var(--font-inter); 
+    }
     
-    /* Estilo Bento Adaptable */
     .bento-card {
         @apply bg-zinc-50 border border-zinc-200 dark:bg-[#0a0a0a] dark:border-white/[0.05] rounded-[2rem] overflow-hidden relative transition-all duration-500;
     }
@@ -69,14 +109,25 @@ const { title } = Astro.props;
         box-shadow: 0 0 40px rgba(0,0,0,0.5);
     }
 
-    /* Animación de entrada */
     .reveal {
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform, opacity;
     }
+
     .reveal.active {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        @apply bg-white dark:bg-[#030303];
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply bg-zinc-300 dark:bg-zinc-800 rounded-full hover:bg-zinc-400 dark:hover:bg-zinc-700;
     }
 </style>

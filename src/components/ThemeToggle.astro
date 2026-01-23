@@ -25,13 +25,16 @@ import { Sun, Moon } from 'lucide-react';
 </style>
 
 <script>
+  import { setTheme } from '../utils/theme';
+
   const setup = () => {
     const btn = document.querySelector('#theme-toggle');
     if (btn) {
       btn.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark');
         const isDark = document.documentElement.classList.contains('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        const newTheme = isDark ? 'dark' : 'light';
+        setTheme(newTheme);
       }, { once: false });
     }
   };

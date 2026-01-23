@@ -73,7 +73,7 @@
       "featured": false
     },
     {
-      "title": "Candido Stack (Portfolio 2026)",
+      "title": "Candido Stack",
       "description": "High-performance professional portfolio. Focused on asset optimization, certified accessibility, and modern architecture.",
       "tags": [
         { "name": "Astro", "category": "Frameworks" },
@@ -82,7 +82,8 @@
         { "name": "Sharp", "category": "Tools" }
       ],
       "github": "https://github.com/CandidoAg/candido-stack",
-      "link": "#",
+      "image": "/images/portfolio-image",
+      "link": "https://candido-stack.vercel.app/",
       "featured": false
     }
   ]

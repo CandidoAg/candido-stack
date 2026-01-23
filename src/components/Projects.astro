@@ -1,7 +1,7 @@
 ---
 import cvEs from '../data/cv.json';
 import cvEn from '../data/cv-en.json';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { Icon } from 'astro-icon/components';
 import { getIconName } from '../utils/icons';
 
@@ -25,40 +25,52 @@ const projectsEn = cvEn.projects;
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-7 gap-6">
       {projectsEs.map((project, index) => {
         const projectEn = projectsEn[index];
+        const hasImage = project.image && project.image !== "";
+
         return (
-          <div class={project.featured ? "md:col-span-4" : "md:col-span-2"}>
+          <div class={project.featured ? "md:col-span-4" : "md:col-span-3"}>
             <div class="group h-full p-8 
               bg-white border-zinc-200 
               dark:bg-zinc-900/40 dark:border-zinc-800 
               rounded-[2.5rem] hover:border-cyan-500/30 dark:hover:border-zinc-700 
-              transition-all duration-500 flex flex-col justify-between shadow-sm dark:shadow-xl">
+              transition-all duration-500 flex flex-col shadow-sm dark:shadow-xl">
               
-              <div>
+              <div class="flex-grow">
                 <div class="flex justify-between items-start mb-6">
-                  <div class="p-4 
-                    bg-zinc-50 border-zinc-100 text-cyan-800
-                    dark:bg-zinc-950/50 dark:border-white/5 dark:text-cyan-500 
-                    rounded-2xl group-hover:scale-110 transition-all duration-500">
-                    {/* TODO Icono genérico, se debe cambiar cuando se desplieguen a la imagen por defecto del proyecto */}
-                  </div>
-                  
-                  <div class="flex gap-4 text-gray-600 dark:text-zinc-500 pt-2">
-                    {project.github && (
-                      <a href={project.github} target="_blank" class="hover:text-zinc-900 dark:hover:text-white transition-colors"
-                        aria-label="GitHub"
-                        title="GitHub">
-                        <Github size={22} />
+                  <div class="relative group/logo">
+                    {hasImage ? (
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        data-project-link
+                        class="block overflow-hidden rounded-2xl border border-zinc-100 dark:border-white/5 shadow-md hover:shadow-cyan-500/20 transition-all duration-500"
+                      >
+                        <img 
+                          src={`${project.image}-light.webp`} 
+                          alt={project.title} 
+                          width="400"
+                          height="400"
+                          class="object-cover dark:hidden group-hover/logo:scale-110 transition-transform duration-500"
+                        />
+                        <img 
+                          src={`${project.image}-dark.webp`} 
+                          alt={project.title} 
+                          width="400"
+                          height="400"
+                          class="object-cover hidden dark:block group-hover/logo:scale-110 transition-transform duration-500"
+                        />
                       </a>
-                    )}
-                    {project.link !== "#" && (
-                      <a href={project.link} target="_blank" class="hover:text-zinc-900 dark:hover:text-white transition-colors"
-                        aria-label="External Link"
-                        title="External Link" >
-                        <ExternalLink size={22} />
-                      </a>
+                    ) : (
+                      <div class="p-4 
+                        bg-zinc-50 border-zinc-100 text-cyan-800
+                        dark:bg-zinc-950/50 dark:border-white/5 dark:text-cyan-500 
+                        rounded-2xl group-hover:scale-110 transition-all duration-500">
+                        <Icon name="lucide:layers" class="w-6 h-6" />
+                      </div>
                     )}
                   </div>
                 </div>
@@ -77,24 +89,43 @@ const projectsEn = cvEn.projects;
                 >
                   {project.description}
                 </p>
+
+                <div class="flex flex-wrap gap-4 mb-6">
+                  {project.tags.map((tag) => (
+                    <div class="flex flex-col items-center gap-2 group/item">
+                      <div class="w-12 h-12 flex items-center justify-center rounded-2xl 
+                        bg-zinc-50 border-zinc-100
+                        dark:bg-zinc-950/60 dark:border-zinc-800 
+                        group-hover/item:border-cyan-500/50 group-hover/item:bg-cyan-500/5 
+                        transition-all duration-300">
+                        <Icon name={getIconName(tag.name)} class="w-6 h-6 text-gray-600 dark:text-zinc-500 group-hover/item:text-cyan-500 transition-colors" />
+                      </div>
+                      <span class="text-[9px] font-mono text-zinc-500 dark:text-zinc-300 uppercase tracking-tighter group-hover/item:text-zinc-900 dark:group-hover/item:text-white transition-colors">
+                        {tag.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div class="flex flex-wrap gap-4">
-                {project.tags.map((tag) => (
-                  <div class="flex flex-col items-center gap-2 group/item">
-                    <div class="w-12 h-12 flex items-center justify-center rounded-2xl 
-                      bg-zinc-50 border-zinc-100
-                      dark:bg-zinc-950/60 dark:border-zinc-800 
-                      group-hover/item:border-cyan-500/50 group-hover/item:bg-cyan-500/5 
-                      transition-all duration-300">
-                      <Icon name={getIconName(tag.name)} class="w-6 h-6 text-gray-600 dark:text-zinc-500 group-hover/item:text-cyan-500 transition-colors" />
-                    </div>
-                    <span class="text-[9px] font-mono text-zinc-500 dark:text-zinc-300 uppercase tracking-tighter group-hover/item:text-zinc-900 dark:group-hover/item:text-white transition-colors">
-                      {tag.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              {project.github && (
+                <div class="mt-2 pt-2">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 px-6 py-3 w-full
+                          bg-zinc-800 text-white border border-zinc-700
+                          dark:bg-white dark:text-zinc-900 dark:border-transparent
+                          rounded-2xl font-medium text-sm transition-all duration-300
+                          hover:scale-[1.02] hover:bg-zinc-900 dark:hover:bg-zinc-100
+                          hover:shadow-xl hover:shadow-cyan-500/10 active:scale-95"
+                  >
+                    <Github size={18} />
+                    <span data-es="Ver código" data-en="View code">Ver código</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         )
@@ -104,6 +135,28 @@ const projectsEn = cvEn.projects;
 </section>
 
 <script>
+  const syncProjectLinks = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    const theme = isDark ? 'dark' : 'light';
+    const lang = localStorage.getItem('lang') || 'es';
+    
+    const links = document.querySelectorAll('[data-project-link]');
+    
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.startsWith('#')) return;
+
+      try {
+        const url = new URL(href, window.location.origin);
+        url.searchParams.set('theme', theme);
+        url.searchParams.set('lang', lang);
+        link.setAttribute('href', url.toString());
+      } catch (e) {
+        console.error("Error al sincronizar el link:", href);
+      }
+    });
+  };
+
   const updateProjects = () => {
     const lang = localStorage.getItem('lang') || 'es';
     const elements = document.querySelectorAll('#proyectos [data-es]');
@@ -111,8 +164,14 @@ const projectsEn = cvEn.projects;
       const text = el.getAttribute(`data-${lang}`);
       if (text) el.textContent = text;
     });
+    syncProjectLinks();
   };
 
   window.addEventListener('language-changed', updateProjects);
+  
+  const observer = new MutationObserver(syncProjectLinks);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
   updateProjects();
+  syncProjectLinks();
 </script>
