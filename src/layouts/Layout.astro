@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/inter';
 import '../styles/global.css';
+import SpeedInsights  from "@vercel/speed-insights/astro"
 
 interface Props { 
   title: string; 
@@ -65,6 +66,7 @@ const { title } = Astro.props;
     
         <main class="pt-16 md:pt-24">
             <slot />
+            <SpeedInsights />
         </main>
 
         <script>
