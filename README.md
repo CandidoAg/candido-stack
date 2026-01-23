@@ -1,17 +1,8 @@
 # 🚀 candido-stack | Portfolio & CV
 
-Este repositorio contiene mi portafolio profesional y currículo interactivo, construido con un enfoque en rendimiento extremo (100% Lighthouse), tipado fuerte y modernización de herramientas.
+Este repositorio contiene mi portafolio profesional y currículo interactivo, construido con un enfoque en rendimiento extremo, tipado fuerte y modernización de herramientas.
 
 El objetivo de este proyecto es servir como nexo entre mi experiencia consolidada en sistemas críticos transaccionales y mi dominio de arquitecturas modernas distribuidas.
-
----
-
-### 🏆 Lighthouse Score (Perfect Score)
-Actualmente, el proyecto alcanza la máxima puntuación en todas las métricas de Google Lighthouse tanto en Mobile como en Desktop:
-- **Performance:** 100% (Optimización de assets y carga diferida)
-- **Accessibility:** 100% (Contraste WCAG AA y semántica ARIA)
-- **Best Practices:** 100% (Seguridad y estándares modernos)
-- **SEO:** 100% (Metadatos y estructura de rastreo)
 
 ---
 
@@ -64,7 +55,7 @@ pnpm preview
 - [x] Configuración inicial Astro + Tailwind + pnpm.
 - [x] Optimización de imágenes con Sharp (WebP).
 - [x] Accesibilidad 100% y contraste corregido en Dark Mode.
-- [ ] Configuración de CI/CD para despliegue automático.
+- [x] Configuración de CI/CD para despliegue automático.
 
 ---
 *"El código limpio es el resultado de un aprendizaje constante."*
