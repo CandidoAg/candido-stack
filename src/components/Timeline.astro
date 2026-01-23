@@ -14,25 +14,23 @@ const getDuration = (index: number) => {
 }
 ---
 
-<section id="trayectoria" class="py-10 px-6 transition-colors duration-300">
+<section id="trayectoria" class="py-10 px-4 md:px-6 transition-colors duration-300">
   <div class="max-w-5xl mx-auto 
-    bg-zinc-50 border-zinc-200 
+    bg-zinc-50 border border-zinc-200 
     dark:bg-zinc-900/40 dark:border-white/5 
-    rounded-[3rem] p-8 md:p-16 relative overflow-hidden group shadow-sm dark:shadow-2xl">
+    rounded-[3rem] p-6 md:p-16 relative overflow-hidden group shadow-sm dark:shadow-2xl">
     
     <div class="relative">
-      <div class="flex items-center mb-8 justify-center">
-        <h2 
-          class="text-zinc-900 dark:text-white text-3xl font-bold uppercase"
-          data-es="Trayectoria"
-          data-en="Timeline"
-          >
+      <div class="flex items-center mb-12 justify-center">
+        <h2 class="text-zinc-900 dark:text-white text-3xl font-bold uppercase tracking-tighter"
+            data-es="Trayectoria" data-en="Timeline">
             Trayectoria
         </h2>
       </div>
-      <div class="absolute left-1/2 -translate-x-1/2 h-full w-px bg-zinc-200 dark:bg-white/10 hidden md:block"></div>
 
-      <div class="space-y-16">
+      <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 h-[88%] md:h-[90%] w-px bg-zinc-200 dark:bg-white/10"></div>
+
+      <div class="space-y-12 md:space-y-16">
         {experienceEs.map((item, index) => {
           const itemEn = experienceEn[index];
           const isEven = index % 2 === 0;
@@ -42,71 +40,63 @@ const getDuration = (index: number) => {
           return (
             <div class={`relative flex flex-col md:flex-row items-center justify-between w-full ${isEven ? 'md:flex-row-reverse' : ''}`}>
               
-              <div class="absolute left-1/2 -translate-x-1/2 z-20 hidden md:flex items-center justify-center w-10 h-10 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-full shadow-sm">
-                <span class="text-zinc-600 dark:text-zinc-300">
+              <div class="absolute left-4 md:left-1/2 -translate-x-1/2 z-20 flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-full shadow-sm">
+                <span class="text-zinc-600 dark:text-zinc-300 scale-75 md:scale-100">
                   {isWork ? <Briefcase size={16} /> : <GraduationCap size={16} />}
                 </span>
               </div>
 
-              <div class="w-full md:w-[46%]">
-                <div 
-                  class="timeline-card group cursor-pointer bg-white dark:bg-[#0c0c0c] rounded-2xl shadow-sm border border-zinc-100 dark:border-white/[0.05] transition-all duration-300 relative overflow-hidden"
-                >
-                  <div class="absolute top-0 left-0 h-8 flex items-start">
-                    <svg width="160" height="32" viewBox="0 0 160 32" class={colorClass}>
+              <div class="w-full pl-12 md:pl-0 md:w-[45%]">
+                <div class="timeline-card group cursor-pointer bg-white dark:bg-[#0c0c0c] rounded-2xl shadow-sm border border-zinc-100 dark:border-white/[0.05] transition-all duration-300 relative overflow-hidden">
+                  
+                  <div class="absolute top-0 left-0 h-7 md:h-8 flex items-start">
+                    <svg width="140" height="28" viewBox="0 0 160 32" class={colorClass}>
                       <polygon points="0,0 150,0 140,16 150,32 0,32" />
                     </svg>
-
-                    <div class="absolute inset-0 flex items-center px-4 gap-1.5 text-white font-bold text-[10px] uppercase tracking-wider">
-                      {isWork ? <Briefcase size={12} strokeWidth={3} /> : <GraduationCap size={12} strokeWidth={3} />}
-                      <span class="text-zinc-600 dark:text-zinc-100" 
-                        data-es={isWork ? "Puesto de trabajo" : "Titulación"} data-en={isWork ? "Job Position" : "Education"}>
+                    <div class="absolute inset-0 flex items-center px-3 gap-1.5 text-white font-bold text-[9px] md:text-[10px] uppercase tracking-wider">
+                      {isWork ? <Briefcase size={10} strokeWidth={3} /> : <GraduationCap size={10} strokeWidth={3} />}
+                      <span class="dark:text-zinc-100" data-es={isWork ? "Puesto de trabajo" : "Titulación"} data-en={isWork ? "Job Position" : "Education"}>
                         {isWork ? "Puesto de trabajo" : "Titulación"}
                       </span>
                     </div>
                   </div>
 
-                  <div class="p-8 pt-12">
+                  <div class="p-6 md:p-8 pt-10 md:pt-12">
                     <div class="flex justify-between items-start w-full">
                       <div class="w-full">
-                        <div class="flex justify-between items-center">
-                          <h3 class="text-xl font-bold text-zinc-800 dark:text-zinc-100 tracking-tight">
+                        <div class="flex justify-between items-center gap-2">
+                          <h3 class="text-lg md:text-xl font-bold text-zinc-800 dark:text-zinc-100 tracking-tight leading-tight">
                             {item.company}
                           </h3>
-                          <ChevronDown size={20} className="text-zinc-300 dark:text-zinc-400 transition-transform duration-500 chevron-icon" />
+                          <ChevronDown size={18} className="text-zinc-300 dark:text-zinc-400 transition-transform duration-500 chevron-icon shrink-0" />
                         </div>
 
-                        <p class="text-zinc-600 dark:text-zinc-400 font-semibold text-[17px] mt-1" data-es={item.position} data-en={itemEn.position}>
+                        <p class="text-zinc-600 dark:text-zinc-400 font-semibold text-sm md:text-[17px] mt-1" data-es={item.position} data-en={itemEn.position}>
                           {item.position}
                         </p>
                         
-                        <div class="text-gray-600 dark:text-zinc-500 text-[13px] mt-1 font-medium italic">
-                          <span class="text-zinc-600 dark:text-zinc-300"
-                                data-es={item.period} data-en={itemEn.period}>{item.period}</span>
-                          <span class="block not-italic dark:text-zinc-300">({getDuration(index)})</span>
+                        <div class="text-zinc-500 dark:text-zinc-500 text-[11px] md:text-[13px] mt-2 font-medium italic">
+                          <span class="text-zinc-600 dark:text-zinc-300 not-italic block md:inline" data-es={item.period} data-en={itemEn.period}>{item.period}</span>
+                          <span class="block md:inline md:ml-1 not-italic opacity-70">({getDuration(index)})</span>
                         </div>
                       </div>
                     </div>
 
                     <div class="expand-container grid grid-rows-[0fr] transition-all duration-500 ease-in-out opacity-0">
                       <div class="overflow-hidden">
-                        <div class="pt-2 mt-6 border-t border-zinc-50 dark:border-white/5">
-                          <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed" data-es={item.description} data-en={itemEn.description}>
+                        <div class="pt-4 mt-4 border-t border-zinc-50 dark:border-white/5">
+                          <p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed mb-6" data-es={item.description} data-en={itemEn.description}>
                             {item.description}
                           </p>
                           
-                          {item.tags && item.tags.length > 0 && (
-                            <h4 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-600 dark:text-zinc-400 mb-6" data-es="Tecnologías y herramientas" data-en="Technologies & tools">
-                              Tecnologías y herramientas
-                            </h4>
-                            
-                            <div class="flex flex-wrap gap-x-8 gap-y-6">
+                          {item.tags && (
+                            <div class="flex flex-wrap gap-x-6 gap-y-4">
                               {item.tags.map((tag) => (
-                                <div class="flex flex-col items-center gap-2 min-w-[50px] group/icon">
-                                  <div class="p-2 rounded-xl bg-zinc-50 dark:bg-white/[0.02] border border-zinc-100 dark:border-white/[0.05]">
-                                    <Icon name={getIconName(tag.name)} class="w-6 h-6 text-gray-600 group-hover/icon:text-cyan-500 transition-colors" />
+                                <div class="flex flex-col items-center gap-1.5 group/icon">
+                                  <div class="p-2 rounded-lg bg-zinc-50 dark:bg-white/[0.03] border border-zinc-100 dark:border-white/10">
+                                    <Icon name={getIconName(tag.name)} class="w-5 h-5 text-zinc-400 group-hover/icon:text-cyan-500 transition-colors" />
                                   </div>
-                                  <span class="text-[9px] text-gray-600 font-bold uppercase dark:text-zinc-300">{tag.name}</span>
+                                  <span class="text-[8px] text-zinc-400 font-bold uppercase tracking-tighter">{tag.name}</span>
                                 </div>
                               ))}
                             </div>
@@ -117,7 +107,8 @@ const getDuration = (index: number) => {
                   </div>
                 </div>
               </div>
-              <div class="hidden md:block w-[46%]"></div>
+
+              <div class="hidden md:block w-[45%]"></div>
             </div>
           )
         })}
@@ -125,64 +116,3 @@ const getDuration = (index: number) => {
     </div>
   </div>
 </section>
-
-<style>
-  /* Clase de expansión activa */
-  .is-expanded .expand-container {
-    grid-template-rows: 1fr;
-    opacity: 1;
-    margin-bottom: 1rem;
-  }
-  
-  .is-expanded .chevron-icon {
-    transform: rotate(180deg);
-    color: #06b6d4;
-  }
-
-  .timeline-card:hover {
-    border-color: rgba(6, 182, 212, 0.3);
-  }
-
-  .tape {
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgb(255, 255, 255);
-    font-size: 0.75rem;
-    line-height: 1;
-    font-weight: 900;
-    text-transform: uppercase;
-    padding: 0.5rem 1.5rem 0.5rem 1rem;
-    border-left: 0.25rem solid rgb(53, 50, 65);
-    margin-left: -0.25rem;
-    clip-path: polygon(0px 0px, 100% 0px, calc(100% - 0.5rem) 50%, 100% 100%, 0px 100%)
-  }
-</style>
-
-<script>
-  function setupTimeline() {
-    const cards = document.querySelectorAll('.timeline-card');
-    
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        // Toggle de la clase is-expanded
-        card.classList.toggle('is-expanded');
-      });
-    });
-
-    // Traducción
-    const update = () => {
-      const lang = localStorage.getItem('lang') || 'es';
-      document.querySelectorAll('#trayectoria [data-es]').forEach(el => {
-        const text = el.getAttribute(`data-${lang}`);
-        if (text) el.textContent = text;
-      });
-    };
-    window.addEventListener('language-changed', update);
-    update();
-  }
-
-  setupTimeline();
-  document.addEventListener('astro:after-swap', setupTimeline);
-</script>
