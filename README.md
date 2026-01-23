@@ -1,6 +1,6 @@
 # 🚀 candido-stack | Portfolio & CV
 
-Este repositorio contiene mi portafolio profesional y currículo interactivo, construido con un enfoque en rendimiento extremo (100% Lighthouse), tipado fuerte y modernización de herramientas.
+Este repositorio contiene mi portafolio profesional y currículo interactivo, construido con un enfoque en rendimiento extremo, tipado fuerte y modernización de herramientas.
 
 El objetivo de este proyecto es servir como nexo entre mi experiencia consolidada en sistemas críticos transaccionales y mi dominio de arquitecturas modernas distribuidas.
 
