@@ -4,7 +4,8 @@
     "role": "Fullstack Developer",
     "specialty": "Specialized in critical systems.",
     "description": "My approach combines backend robustness with the agility of modern architectures.",
-    "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"]
+    "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"],
+    "about": "I am a full-stack developer with experience in creating robust and scalable applications. I specialize in backend development using the Grails Framework and have a strong interest in modern architectures such as microservices and asynchronous events. My goal is to design efficient solutions that meet business requirements and deliver an exceptional user experience."
   },
   "experience": [
     {
@@ -12,7 +13,7 @@
       "company": "CM.com",
       "position": "Full-stack Developer",
       "period": "Sept 2021 — Present",
-      "description": "Full Stack development with Grails Framework.",
+      "description": "Development and maintenance of a critical large-scale government services platform. Responsible for implementing complete end-to-end user flows, from the interactive frontend to the backend logic. Key role in the integration of financial systems and proprietary payment gateways, ensuring the reliability of international transactions.",
       "tags": [
         { "name": "Groovy", "category": "Languages" },
         { "name": "Grails", "category": "Backend" },
@@ -25,7 +26,7 @@
       "company": "VIPERA Plc",
       "position": "Software Developer",
       "period": "Dec 2019 — Sept 2021",
-      "description": "Full Stack software developer with Grails Framework.",
+      "description": "Implementation of web solutions for managing consular and administrative procedures. Development of advanced monitoring dashboards and internal administration tools. Specialized in data synchronization with SAP business systems and in optimizing document request processes for high-security environments.",
       "tags": [
         { "name": "Groovy", "category": "Languages" },
         { "name": "Grails", "category": "Backend" },

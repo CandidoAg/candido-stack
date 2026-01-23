@@ -4,15 +4,16 @@
     "role": "Desarrollador Fullstack",
     "specialty": "Especializado en sistemas críticos.",
     "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas.",
-    "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"]
+    "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"],
+    "about": "Soy un desarrollador Fullstack con experiencia en la creación de aplicaciones robustas y escalables. Me especializo en el desarrollo backend utilizando Grails Framework y tengo un fuerte interés en arquitecturas modernas como microservicios y eventos asíncronos. Mi objetivo es diseñar soluciones eficientes que cumplan con los requisitos del negocio y ofrezcan una experiencia de usuario excepcional."
   },
   "experience": [
     {
       "type": "work",
       "company": "CM.com",
-      "position": "Full-stack Developer",
+      "position": "Fullstack Developer",
       "period": "sept 2021 — Ahora",
-      "description": "Desarrollo Full Stack con Grails Framework.",
+      "description": "Desarrollo y mantenimiento de una plataforma crítica de servicios gubernamentales a gran escala. Responsable de la implementación de flujos completos de usuario (end-to-end), desde el frontend interactivo hasta la lógica de backend. Trabajo clave en la integración de sistemas financieros y pasarelas de pago propietarias, garantizando la fiabilidad de las transacciones internacionales.",
       "tags": [
         { "name": "Groovy", "category": "Lenguajes" },
         { "name": "Grails", "category": "Backend" },
@@ -23,9 +24,9 @@
     {
       "type": "work",
       "company": "VIPERA Plc",
-      "position": "Software Developer",
+      "position": "Fullstack Developer",
       "period": "dic 2019 — sept 2021",
-      "description": "Full Stack software developer with Grails Framework.",
+      "description": "Implementación de soluciones web para la gestión de trámites consulares y administrativos. Desarrollo de paneles de monitorización avanzada y herramientas de administración interna. Especializado en la sincronización de datos con sistemas empresariales SAP y en la optimización de procesos de solicitud de documentos para entornos de alta seguridad.",
       "tags": [
         { "name": "Groovy", "category": "Lenguajes" },
         { "name": "Grails", "category": "Backend" },
