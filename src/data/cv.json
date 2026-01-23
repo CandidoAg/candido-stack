@@ -21,7 +21,7 @@
       "description": "Desarrollo y mantenimiento de una plataforma crítica de servicios gubernamentales a gran escala. Responsable de la implementación de flujos completos de usuario (end-to-end), desde el frontend interactivo hasta la lógica de backend. Trabajo clave en la integración de sistemas financieros y pasarelas de pago propietarias, garantizando la fiabilidad de las transacciones internacionales.",
       "tags": [
         { "name": "Groovy", "category": "Lenguajes" },
-        { "name": "Grails", "category": "Backend" },
+        { "name": "Grails", "category": "Fullstack" },
         { "name": "JavaScript", "category": "Lenguajes" },
         { "name": "MySQL", "category": "Bases de Datos" }
       ]
@@ -34,7 +34,7 @@
       "description": "Implementación de soluciones web para la gestión de trámites consulares y administrativos. Desarrollo de paneles de monitorización avanzada y herramientas de administración interna. Especializado en la sincronización de datos con sistemas empresariales SAP y en la optimización de procesos de solicitud de documentos para entornos de alta seguridad.",
       "tags": [
         { "name": "Groovy", "category": "Lenguajes" },
-        { "name": "Grails", "category": "Backend" },
+        { "name": "Grails", "category": "Fullstack" },
         { "name": "JavaScript", "category": "Lenguajes" },
         { "name": "MySQL", "category": "Bases de Datos" }
       ]
@@ -54,12 +54,13 @@
       "description": "E-commerce con Arquitectura Hexagonal y DDD. Comunicación asíncrona mediante Kafka y patrón Saga.",
       "tags": [
         { "name": "TypeScript", "category": "Lenguajes" },
-        { "name": "Node.js", "category": "Backend" },
+        { "name": "Node.js", "category": "Herramientas" },
         { "name": "PostgreSQL", "category": "Bases de Datos" },
-        { "name": "Apache Kafka", "category": "Arquitectura e Infra" },
-        { "name": "Docker", "category": "Arquitectura e Infra" },
+        { "name": "Apache Kafka", "category": "Infraestructura" },
+        { "name": "Docker", "category": "Infraestructura" },
+        { "name": "Vitest", "category": "Testing" },
         { "name": "Testcontainers", "category": "Testing" },
-        { "name": "Stripe", "category": "Backend" }
+        { "name": "Stripe", "category": "Herramientas" }
       ],
       "github": "https://github.com/CandidoAg/retrovault",
       "link": "#",
@@ -69,8 +70,8 @@
       "title": "NoteStack",
       "description": "Gestor de tareas Cloud-Native con React Native. Sincronización en tiempo real y arquitectura segura.",
       "tags": [
-        { "name": "React Native", "category": "Móvil" },
-        { "name": "Expo", "category": "Móvil" },
+        { "name": "React Native", "category": "Móviles" },
+        { "name": "Expo", "category": "Herramientas" },
         { "name": "Cloud Firestore", "category": "Bases de Datos" },
         { "name": "TypeScript", "category": "Lenguajes" }
       ],
@@ -82,7 +83,7 @@
       "title": "Candido Stack",
       "description": "Portafolio profesional de alto rendimiento. Enfoque en optimización de assets, accesibilidad certificada y arquitectura moderna.",
       "tags": [
-        { "name": "Astro", "category": "Frameworks" },
+        { "name": "Astro", "category": "Fullstack" },
         { "name": "Tailwind CSS", "category": "Frontend" },
         { "name": "TypeScript", "category": "Lenguajes" },
         { "name": "Sharp", "category": "Herramientas" }
