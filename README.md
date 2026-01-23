@@ -6,15 +6,6 @@ El objetivo de este proyecto es servir como nexo entre mi experiencia consolidad
 
 ---
 
-### 🏆 Lighthouse Score (Perfect Score)
-Actualmente, el proyecto alcanza la máxima puntuación en todas las métricas de Google Lighthouse tanto en Mobile como en Desktop:
-- **Performance:** 100% (Optimización de assets y carga diferida)
-- **Accessibility:** 100% (Contraste WCAG AA y semántica ARIA)
-- **Best Practices:** 100% (Seguridad y estándares modernos)
-- **SEO:** 100% (Metadatos y estructura de rastreo)
-
----
-
 ### 🛠️ Tech Stack
 
 | Capa | Tecnología |
