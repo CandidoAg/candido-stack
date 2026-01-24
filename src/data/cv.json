@@ -1,12 +1,11 @@
 {
   "hero": {
-    "name": "Cándido",
+    "name": "Cándido Aguilar",
     "role": "Desarrollador Full stack",
     "specialty": "Especializado en sistemas críticos.",
     "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas.",
-    "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"],
+    "featuredSkills": ["Grails", "TypeScript",  "React", "Tailwind CSS", "Apache Kafka"],
     "about": [
-      {"greeting": "¡Hola! Soy <span class='highlight'>Cándido Ag.</span>"},
       {"paragraph1": "Desarrollador <span class='highlight'>Full stack</span> con un enfoque sólido en la creación de aplicaciones <span class='highlight'>escalables y seguras</span>. Mi trayectoria profesional se ha centrado en el desarrollo de <span class='highlight'>plataformas críticas</span> para la gestión de trámites gubernamentales y servicios consulares a nivel internacional."},
       {"paragraph2": "He construido flujos complejos para la adquisición de documentos oficiales y visados, asegurando la <span class='highlight'>integridad de los datos</span> en entornos de alta seguridad e integrando sistemas financieros de gran envergadura como <span class='highlight'>pasarelas de pago</span> y ecosistemas <span class='highlight'>SAP</span>."},
       {"paragraph3": "Fuera del entorno profesional, me apasiona explorar arquitecturas modernas. Aplico patrones como <span class='highlight'>Arquitectura Hexagonal</span> y <span class='highlight'>DDD</span> en mis proyectos personales, experimentando con tecnologías <span class='highlight'>cloud-native</span> y sistemas de mensajería asíncrona como <span class='highlight'>Kafka</span>."}

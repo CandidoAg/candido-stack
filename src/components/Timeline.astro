@@ -48,8 +48,8 @@ const getDuration = (index: number) => {
                 <div class="timeline-card group cursor-pointer bg-white dark:bg-[#0c0c0c] rounded-2xl shadow-md border border-zinc-200 dark:border-white/[0.08] transition-all duration-300 relative overflow-hidden">
                   
                   <div class="absolute top-0 left-0 h-7 md:h-8 flex items-start">
-                    <svg width="140" height="28" viewBox="0 0 160 32" class={colorClass}>
-                      <polygon points="0,0 150,0 140,16 150,32 0,32" />
+                    <svg width={isWork ? "190" : "140"} height="32" viewBox={isWork ? "0 0 190 32": "0 0 140 32"} class={colorClass}>
+                      <polygon points={isWork ? "0,0 190,0 180,16 190,32 0,32": "0,0 140,0 130,16 140,32 0,32"} />
                     </svg>
                     <div class="absolute inset-0 flex items-center px-3 gap-1.5 text-white font-bold text-[9px] md:text-[10px] uppercase tracking-wider">
                       {isWork ? <Briefcase size={10} strokeWidth={3} /> : <GraduationCap size={10} strokeWidth={3} />}

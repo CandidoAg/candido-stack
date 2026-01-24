@@ -1,6 +1,13 @@
 ---
 import LanguageSelector from './LanguageSelector.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import cvEs from '../data/cv.json';
+import cvEn from '../data/cv-en.json';
+
+const translations = {
+  es: cvEs.hero,
+  en: cvEn.hero
+};
 ---
 
 <header class="fixed top-0 left-0 w-full z-50 pointer-events-none">
@@ -25,8 +32,10 @@ import ThemeToggle from './ThemeToggle.astro';
               class="w-full h-full object-cover hidden dark:block group-hover:scale-110 transition-transform duration-300"
             />
           </div>
-          <span class="text-sm font-bold text-zinc-900 dark:text-white tracking-tight hidden xs:block">
-            Cándido Ag.
+          <span class="text-sm font-bold text-zinc-900 dark:text-white tracking-tight hidden xs:block"
+                data-es={translations.es.name}
+                data-en={translations.en.name}>
+            
           </span>
         </a>
       </div>

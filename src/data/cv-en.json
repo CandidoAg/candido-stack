@@ -1,12 +1,11 @@
 {
   "hero": {
-    "name": "Cándido",
+    "name": "Cándido Aguilar",
     "role": "Full stack Developer",
     "specialty": "Specialized in critical systems.",
     "description": "My approach combines backend robustness with the agility of modern architectures.",
-    "featuredSkills": ["Java", "Apache Kafka", "TypeScript", "Docker", "Grails"],
+    "featuredSkills": ["Grails", "TypeScript",  "React", "Tailwind CSS", "Apache Kafka"],
     "about": [
-      {"greeting": "Hello! I'm <span class='highlight'>Cándido Ag.</span>"},
       {"paragraph1": "<span class='highlight'>Full stack</span> Developer with a solid focus on creating <span class='highlight'>scalable and secure</span> applications. My professional journey has centered on developing <span class='highlight'>critical platforms</span> for managing government procedures and international consular services."},
       {"paragraph2": "I have built complex workflows for the acquisition of official documents and visas, ensuring <span class='highlight'>data integrity</span> in high-security environments and integrating large-scale financial systems such as <span class='highlight'>payment gateways</span> and <span class='highlight'>SAP</span> ecosystems."},
       {"paragraph3": "Outside of my professional environment, I am passionate about exploring modern architectures. I apply patterns like <span class='highlight'>Hexagonal Architecture</span> and <span class='highlight'>DDD</span> in my personal projects, experimenting with <span class='highlight'>cloud-native</span> technologies and asynchronous messaging systems like <span class='highlight'>Kafka</span>."}

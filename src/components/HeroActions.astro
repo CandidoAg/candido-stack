@@ -1,0 +1,47 @@
+---
+import cvContact from '../data/contactLinks.json';
+import { Icon } from 'astro-icon/components';
+---
+<nav class="flex flex-wrap items-center gap-4 mt-8" aria-label="Hero Actions">
+  {cvContact.contact.email.length > 0 && (
+      <a href={`mailto:${cvContact.contact.email}`}
+        class="p-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/10
+          text-zinc-600 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-400
+          rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+        title="Email">
+        <Icon name="lucide:mail" size={20} />
+      </a>
+    )}
+
+  <div class="flex items-center gap-3">
+    {cvContact.contact.linkedin.length > 0 && (
+      <a href={cvContact.contact.linkedin} target="_blank" rel="noopener noreferrer"
+        class="p-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/10
+          text-zinc-600 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-400
+          rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+        title="LinkedIn">
+        <Icon name="lucide:linkedin" size={20} />
+      </a>
+    )}
+
+    {cvContact.contact.github.length > 0 && (
+      <a href={cvContact.contact.github} target="_blank" rel="noopener noreferrer"
+        class="p-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/10
+          text-zinc-600 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-400
+          rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+        title="GitHub">
+        <Icon name="lucide:github" size={20} />
+      </a>
+    )}
+
+    {cvContact.contact.curriculum.length > 0 && (
+      <a href={cvContact.contact.curriculum} target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-3 
+          bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-200 dark:hover:bg-zinc-700
+          text-zinc-900 dark:text-white rounded-xl shadow-sm
+          transition-all duration-300 hover:-translate-y-1 font-medium text-sm md:text-base">
+        <span data-es="Ver CV" data-en="View CV">CV</span>
+      </a>
+    )}
+  </div>
+</nav>

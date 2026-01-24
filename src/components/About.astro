@@ -2,6 +2,8 @@
 import cvEs from '../data/cv.json';
 import cvEn from '../data/cv-en.json';
 
+const nameEs = cvEs.hero.name;
+const nameEn = cvEn.hero.name;
 const aboutEs = cvEs.hero.about;
 const aboutEn = cvEn.hero.about;
 
@@ -22,16 +24,17 @@ const getPara = (item: any) => Object.values(item)[0] as string;
       </h2>
     </div>
     <div class="max-w-3xl mx-auto space-y-6">
+      <p class="text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white mb-8 tracking-tight"
+        data-es={"¡Hola! Soy <span class='highlight'>" + nameEs + "</span>"}
+        data-en={"Hello! I'm <span class='highlight'>" + nameEn + "</span>"}/>
+
       {aboutEs.map((item, index) => {
         const textEs = getPara(item);
         const textEn = getPara(aboutEn[index]);
-        const isGreeting = Object.keys(item)[0] === 'greeting';
 
         return (
           <p 
-            class={isGreeting 
-              ? "text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white mb-8 tracking-tight" 
-              : "text-zinc-700 dark:text-zinc-400 text-lg md:text-xl leading-relaxed about-text"}
+            class="text-zinc-700 dark:text-zinc-400 text-lg md:text-xl leading-relaxed about-text"
             data-es={textEs}
             data-en={textEn}
             set:html={textEs} 
