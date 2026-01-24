@@ -1,8 +1,10 @@
 ---
 import cvContact from '../data/contactLinks.json';
 import { Icon } from 'astro-icon/components';
+
+const { isFooter } = Astro.props;
 ---
-<nav class="flex flex-wrap items-center gap-4 mt-8" aria-label="Hero Actions">
+<nav class={"flex flex-wrap items-center gap-4" + (!isFooter ? " mt-8" : "")} aria-label={"Hero Actions" + (isFooter ? "Footer" : "")}>
   {cvContact.contact.email.length > 0 && (
       <a href={`mailto:${cvContact.contact.email}`}
         class="p-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/10
@@ -34,14 +36,15 @@ import { Icon } from 'astro-icon/components';
       </a>
     )}
 
-    {cvContact.contact.curriculum.length > 0 && (
-      <a href={cvContact.contact.curriculum} target="_blank" rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-5 py-3 
-          bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-200 dark:hover:bg-zinc-700
-          text-zinc-900 dark:text-white rounded-xl shadow-sm
-          transition-all duration-300 hover:-translate-y-1 font-medium text-sm md:text-base">
-        <span data-es="Ver CV" data-en="View CV">CV</span>
-      </a>
-    )}
+    {(cvContact.contact.curriculum.length > 0 && !isFooter) && (
+        <a href={cvContact.contact.curriculum} target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 
+            bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 
+            hover:bg-cyan-600 dark:hover:bg-cyan-400
+            rounded-xl transition-all duration-300 hover:-translate-y-1 font-medium">
+          <span>Ver CV</span>
+          <Icon name="lucide:external-link" size={16} class="opacity-70" />
+        </a>
+      )}
   </div>
 </nav>

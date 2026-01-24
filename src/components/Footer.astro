@@ -1,4 +1,6 @@
 ---
+import HeroActions from "./HeroActions.astro";
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -16,20 +18,7 @@ const currentYear = new Date().getFullYear();
       <span class="text-zinc-900 dark:text-zinc-300 font-bold">CandidoAg</span>
     </div>
     
-    <div class="flex gap-8 items-center">
-      <a 
-        href="https://github.com/CandidoAg" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="text-xs font-mono dark:text-zinc-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors uppercase tracking-widest"
-        data-es="GitHub"
-        data-en="GitHub"
-        aria-label="GitHub"
-        title="GitHub"
-      >
-        GitHub
-      </a>
-    </div>
+   <HeroActions isFooter={true} />
   </div>
 </footer>
 
