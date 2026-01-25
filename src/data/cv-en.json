@@ -62,7 +62,6 @@
         { "name": "PostgreSQL", "category": "Databases" },
         { "name": "Apache Kafka", "category": "Infrastructure" },
         { "name": "Docker", "category": "Infrastructure" },
-        { "name": "Vercel", "category": "Infrastructure" },
         { "name": "Vitest", "category": "Testing" },
         { "name": "Testcontainers", "category": "Testing" },
         { "name": "Node.js", "category": "Tools" },
@@ -97,7 +96,8 @@
         { "name": "Astro", "category": "Fullstack" },
         { "name": "Tailwind CSS", "category": "Frontend" },
         { "name": "TypeScript", "category": "Languages" },
-        { "name": "Sharp", "category": "Tools" }
+        { "name": "Sharp", "category": "Tools" },
+        { "name": "Vercel", "category": "Infrastructure" }
       ],
       "github": "https://github.com/CandidoAg/candido-stack",
       "image": "/images/portfolio",
