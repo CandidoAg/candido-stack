@@ -1,7 +1,14 @@
 ---
 import HeroActions from "./HeroActions.astro";
+import cvEs from '../data/cv.json';
+import cvEn from '../data/cv-en.json';
 
-const currentYear = new Date().getFullYear();
+const translations = {
+  es: cvEs.hero,
+  en: cvEn.hero
+};
+
+const currentYear = new Date().getFullYear(); 
 ---
 
 <footer class="py-12 px-6 border-t border-zinc-100 dark:border-white/5 transition-colors duration-300">
@@ -15,7 +22,7 @@ const currentYear = new Date().getFullYear();
       >
         Diseñado & Desarrollado por
       </span> 
-      <span class="text-zinc-900 dark:text-zinc-300 font-bold">CandidoAg</span>
+      <span class="text-zinc-900 dark:text-zinc-300 font-bold" data-es={translations.es.name} data-en={translations.en.name}></span>
     </div>
     
    <HeroActions isFooter={true} />
