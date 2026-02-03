@@ -4,29 +4,52 @@ import cvEn from '../data/cv-en.json';
 import { Icon } from 'astro-icon/components';
 import { getIconName } from '../utils/icons';
 
-// Función para agrupar habilidades por categoría
+// Definimos la interfaz para evitar el tipo 'unknown'
+interface SkillItem {
+  name: string;
+  category: string;
+  important?: boolean;
+}
+
 const getGroupedSkills = (data: any) => {
-  const allTags = [
-    ...data.experience.flatMap((e: any) => e.tags),
-    ...data.projects.flatMap((p: any) => p.tags)
+  const allTags: SkillItem[] = [
+    ...(data.experience?.flatMap((e: any) => e.tags || []) || []),
+    ...(data.projects?.flatMap((p: any) => p.tags || []) || [])
   ];
 
-  return allTags.reduce((acc, curr) => {
-    if (!acc[curr.category]) acc[curr.category] = new Set();
-    acc[curr.category].add(curr.name);
-    return acc;
-  }, {} as Record<string, Set<string>>);
+  const groups: Record<string, Map<string, SkillItem>> = {};
+
+  allTags.forEach(tag => {
+    if (!groups[tag.category]) groups[tag.category] = new Map();
+    
+    const existing = groups[tag.category].get(tag.name);
+    if (!existing || tag.important) {
+      groups[tag.category].set(tag.name, tag);
+    }
+  });
+
+  return groups;
 };
 
 const groupedEs = getGroupedSkills(cvEs);
 const groupedEn = getGroupedSkills(cvEn);
 
-// Creamos un mapeo de categorías ES -> EN para que el script sepa qué cambiar
-const categories = Object.keys(groupedEs).map((catEs, index) => ({
-  es: catEs,
-  en: Object.keys(groupedEn)[index] || catEs,
-  skills: [...groupedEs[catEs]]
-}));
+const categories = Object.keys(groupedEs).map((catEs, index) => {
+  const skillsArray = Array.from(groupedEs[catEs].values());
+
+  const sortedSkills = skillsArray.sort((a, b) => {
+    if (!!a.important !== !!b.important) {
+      return a.important ? -1 : 1;
+    }
+    return a.name.localeCompare(b.name);
+  });
+
+  return {
+    es: catEs,
+    en: Object.keys(groupedEn)[index] || catEs,
+    skills: sortedSkills
+  };
+});
 ---
 
 <section id="skills" class="py-10 px-6 transition-colors duration-300">
@@ -69,12 +92,12 @@ const categories = Object.keys(groupedEs).map((catEs, index) => ({
                   group-hover/item:border-cyan-500/50 group-hover/item:bg-cyan-500/5 
                   transition-all duration-300">
                   <Icon 
-                    name={getIconName(skillName)} 
+                    name={getIconName(skillName.name)} 
                     class="w-6 h-6 text-gray-600 dark:text-zinc-500 group-hover/item:text-cyan-500 transition-colors" 
                   />
                 </div>
                 <span class="text-[10px] font-mono text-zinc-500 dark:text-zinc-300 uppercase group-hover/item:text-zinc-900 dark:group-hover/item:text-white transition-colors">
-                  {skillName}
+                  {skillName.name}
                 </span>
               </div>
             ))}
