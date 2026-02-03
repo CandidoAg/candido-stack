@@ -1,12 +1,16 @@
 // Mapa de excepciones: nombre del tag -> nombre exacto en Simple Icons
 const exceptions: Record<string, string> = {
   "Node.js": "simple-icons:nodedotjs",
+  "Next.js": "simple-icons:nextdotjs",
+  "Lucide React": "simple-icons:lucide",
   "React Native": "simple-icons:react",
   "Apache Kafka": "simple-icons:apachekafka",
   "Tailwind CSS": "simple-icons:tailwindcss",
   "Spring Boot": "simple-icons:springboot",
   "Cloud Firestore": "simple-icons:firebase",
   "Grails": "grails", 
+  "Spock": "spock",
+  "JWT": "jwt",
   "Testcontainers": "simple-icons:developmentcontainers",
   "Groovy": "simple-icons:apachegroovy",
   "Java": "simple-icons:openjdk",

@@ -1,14 +1,14 @@
 {
   "hero": {
     "name": "Cándido Aguilar",
-    "role": "Desarrollador Full stack",
+    "role": "Desarrollador senior Full stack",
     "specialty": "Especializado en sistemas críticos.",
     "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas.",
-    "featuredSkills": ["Grails", "TypeScript",  "React", "Tailwind CSS", "Apache Kafka"],
+    "featuredSkills": ["Grails", "TypeScript", "React", "Tailwind CSS", "Apache Kafka"],
     "about": [
-      {"paragraph1": "Desarrollador <span class='highlight'>Full stack</span> con un enfoque sólido en la creación de aplicaciones <span class='highlight'>escalables y seguras</span>. Mi trayectoria profesional se ha centrado en el desarrollo de <span class='highlight'>plataformas críticas</span> para la gestión de trámites gubernamentales y servicios consulares a nivel internacional."},
-      {"paragraph2": "He construido flujos complejos para la adquisición de documentos oficiales y visados, asegurando la <span class='highlight'>integridad de los datos</span> en entornos de alta seguridad e integrando sistemas financieros de gran envergadura como <span class='highlight'>pasarelas de pago</span> y ecosistemas <span class='highlight'>SAP</span>."},
-      {"paragraph3": "Fuera del entorno profesional, me apasiona explorar arquitecturas modernas. Aplico patrones como <span class='highlight'>Arquitectura Hexagonal</span> y <span class='highlight'>DDD</span> en mis proyectos personales, experimentando con tecnologías <span class='highlight'>cloud-native</span> y sistemas de mensajería asíncrona como <span class='highlight'>Kafka</span>."}
+      { "paragraph1": "Desarrollador <span class='highlight'>Full stack</span> con un enfoque sólido en la creación de aplicaciones <span class='highlight'>escalables y seguras</span>. Mi trayectoria profesional se ha centrado en el desarrollo de <span class='highlight'>plataformas críticas</span> para la gestión de trámites gubernamentales y servicios consulares a nivel internacional." },
+      { "paragraph2": "He construido flujos complejos para la adquisición de documentos oficiales y visados, asegurando la <span class='highlight'>integridad de los datos</span> en entornos de alta seguridad e integrando sistemas financieros de gran envergadura como <span class='highlight'>pasarelas de pago</span> y ecosistemas <span class='highlight'>SAP</span>." },
+      { "paragraph3": "Fuera del entorno profesional, me apasiona explorar arquitecturas modernas. Aplico patrones como <span class='highlight'>Arquitectura Hexagonal</span> y <span class='highlight'>DDD</span> en mis proyectos personales, experimentando con tecnologías <span class='highlight'>cloud-native</span> y sistemas de mensajería asíncrona como <span class='highlight'>Kafka</span>." }
     ]
   },
   "experience": [
@@ -17,15 +17,26 @@
       "company": "CM.com",
       "position": "Desarrollador Full stack",
       "period": "Sept 2021 — Presente",
-      "description": "Desarrollo y mantenimiento de una plataforma crítica de servicios gubernamentales a gran escala. Responsable de implementar flujos de usuarios completos de extremo a extremo, desde la interfaz interactiva hasta la lógica del backend. Papel clave en la integración de sistemas financieros y pasarelas de pago propias, garantizando la fiabilidad de las transacciones internacionales.",
+      "description": "Desarrollo y mantenimiento de una plataforma crítica de servicios gubernamentales a gran escala para la gestión de trámites y transacciones internacionales.",
+      "details": [
+        "Desarrollo de arquitectura y evolución técnica de plataformas gubernamentales.",
+        "Integración de pasarelas de pago y flujos de usuario E2E (UI a Backend).",
+        "Backend con Groovy/Grails y automatización de builds con Gradle.",
+        "Interfaces dinámicas con HTML, CSS, JavaScript, TypeScript y Bootstrap.",
+        "Administración de bases de datos MySQL de alta transaccionalidad.",
+        "Despliegue y gestión de aplicaciones WAR en servidores Apache Tomcat.",
+        "Control de versiones y colaboración técnica usando GitHub."
+      ],
       "tags": [
-        { "name": "JavaScript", "category": "Lenguajes" },
-        { "name": "Groovy", "category": "Lenguajes" },
-        { "name": "MySQL", "category": "Bases de datos" },
-        { "name": "HTML5", "category": "Frontend"},
+        { "name": "Groovy", "category": "Core Stack" },
+        { "name": "JavaScript", "category": "Core Stack" },
+        { "name": "MySQL", "category": "Data & Ops" },
+        { "name": "HTML5", "category": "Frontend" },
         { "name": "CSS3", "category": "Frontend" },
         { "name": "Bootstrap", "category": "Frontend" },
-        { "name": "Grails", "category": "Fullstack" }
+        { "name": "Grails", "category": "Core Stack" },
+        { "name": "Spock", "category": "Tooling & QA" },
+        { "name": "Gradle", "category": "Tooling & QA" }
       ]
     },
     {
@@ -33,15 +44,26 @@
       "company": "VIPERA Plc",
       "position": "Desarrollador de Software",
       "period": "Dic 2019 — Sept 2021",
-      "description": "Implementación de soluciones web para la gestión de trámites consulares y administrativos. Desarrollo de paneles de monitoreo avanzados y herramientas de administración interna. Especializado en sincronización de datos con sistemas empresariales SAP y en optimización de procesos de solicitud de documentos en entornos de alta seguridad.",
+      "description": "Desarrollo de sistemas para gestión consular e interna, integrando ecosistemas SAP y optimizando procesos documentales en entornos de alta seguridad.",
+      "details": [
+        "Desarrollo Backend con Java, Groovy y Grails (v2 a v5) bajo arquitectura MVC.",
+        "Digitalización de trámites consulares y gestión de flujos administrativos.",
+        "Desarrollo de paneles de monitoreo y herramientas de administración interna.",
+        "Integración y sincronización de datos con sistemas empresariales SAP.",
+        "Optimización de procesos para la validación de documentación oficial.",
+        "Mantenimiento y despliegue de aplicaciones WAR en servidores Linux.",
+        "Implementación de pasarelas de pago en sistemas altamente críticos."
+      ],
       "tags": [
-        { "name": "Groovy", "category": "Lenguajes" },
-        { "name": "JavaScript", "category": "Lenguajes" },
-        { "name": "MySQL", "category": "Bases de datos" },
-        { "name": "HTML5", "category": "Frontend"},
+        { "name": "Groovy", "category": "Core Stack" },
+        { "name": "Java", "category": "Core Stack" },
+        { "name": "MySQL", "category": "Data & Ops" },
+        { "name": "HTML5", "category": "Frontend" },
         { "name": "CSS3", "category": "Frontend" },
         { "name": "Bootstrap", "category": "Frontend" },
-        { "name": "Grails", "category": "Fullstack" }
+        { "name": "Grails", "category": "Core Stack" },
+        { "name": "Spock", "category": "Tooling & QA" },
+        { "name": "Gradle", "category": "Tooling & QA" }
       ]
     },
     {
@@ -58,19 +80,27 @@
       "title": "RetroVault",
       "description": "E-commerce con Arquitectura Hexagonal y DDD. Comunicación asíncrona mediante Kafka y patrón Saga.",
       "tags": [
-        { "name": "TypeScript", "category": "Lenguajes" },
-        { "name": "PostgreSQL", "category": "Bases de datos" },
-        { "name": "Apache Kafka", "category": "Infraestructura" },
-        { "name": "Docker", "category": "Infraestructura" },
-        { "name": "Vitest", "category": "Testing" },
-        { "name": "Testcontainers", "category": "Testing" },
-        { "name": "Node.js", "category": "Herramientas" },
-        { "name": "Stripe", "category": "Herramientas" },
-        { "name": "Prisma", "category": "Herramientas" },
-        { "name": "Zod", "category": "Herramientas" },
-        { "name": "pnpm", "category": "Herramientas" },
-        { "name": "Turborepo", "category": "Herramientas" },
-        { "name": "Vite", "category": "Herramientas" }
+        { "name": "TypeScript", "category": "Core Stack" },
+        { "name": "PostgreSQL", "category": "Data & Ops" },
+        { "name": "NestJS", "category": "Core Stack" },
+        { "name": "Fastify", "category": "Core Stack" },
+        { "name": "Next.js", "category": "Frontend" },
+        { "name": "React", "category": "Frontend" },
+        { "name": "Tailwind CSS", "category": "Frontend" },
+        { "name": "React Query", "category": "Frontend" },
+        { "name": "Lucide React", "category": "Frontend" },
+        { "name": "Apache Kafka", "category": "Data & Ops" },
+        { "name": "Docker", "category": "Data & Ops" },
+        { "name": "Vitest", "category": "Tooling & QA" },
+        { "name": "Testcontainers", "category": "Tooling & QA" },
+        { "name": "Node.js", "category": "Tooling & QA" },
+        { "name": "Stripe", "category": "Tooling & QA" },
+        { "name": "Prisma", "category": "Tooling & QA" },
+        { "name": "Zod", "category": "Tooling & QA" },
+        { "name": "pnpm", "category": "Tooling & QA" },
+        { "name": "Turborepo", "category": "Tooling & QA" },
+        { "name": "Vite", "category": "Tooling & QA" },
+        { "name": "JWT", "category": "Tooling & QA" }
       ],
       "github": "https://github.com/CandidoAg/retrovault",
       "link": "#",
@@ -80,10 +110,10 @@
       "title": "NoteStack",
       "description": "Gestor de tareas cloud-native con React Native. Sincronización en tiempo real y arquitectura segura.",
       "tags": [
-        { "name": "TypeScript", "category": "Lenguajes" },
-        { "name": "Cloud Firestore", "category": "Bases de datos" },
-        { "name": "React Native", "category": "Movil" },
-        { "name": "Expo", "category": "Herramientas" }
+        { "name": "TypeScript", "category": "Core Stack" },
+        { "name": "Cloud Firestore", "category": "Data & Ops" },
+        { "name": "React Native", "category": "Core Stack" },
+        { "name": "Expo", "category": "Tooling & QA" }
       ],
       "github": "https://github.com/CandidoAg/app-notas",
       "link": "#",
@@ -93,12 +123,11 @@
       "title": "Candido Stack",
       "description": "Portfolio profesional de alto rendimiento. Enfocado en optimización de activos, accesibilidad certificada y arquitectura moderna.",
       "tags": [
-        { "name": "Astro", "category": "Fullstack" },
+        { "name": "Astro", "category": "Core Stack" },
         { "name": "Tailwind CSS", "category": "Frontend" },
-        { "name": "TypeScript", "category": "Lenguajes" },
-        { "name": "Sharp", "category": "Herramientas" },
-        { "name": "Vercel", "category": "Infraestructura" }
-
+        { "name": "TypeScript", "category": "Core Stack" },
+        { "name": "Sharp", "category": "Tooling & QA" },
+        { "name": "Vercel", "category": "Data & Ops" }
       ],
       "github": "https://github.com/CandidoAg/candido-stack",
       "image": "/images/portfolio",

@@ -5,8 +5,18 @@ import { Briefcase, GraduationCap, ChevronDown } from 'lucide-react';
 import { Icon } from 'astro-icon/components';
 import { getIconName } from '../utils/icons';
 
-const experienceEs = cvEs.experience;
-const experienceEn = cvEn.experience;
+interface ExperienceItem {
+  type: string;
+  company: string;
+  position: string;
+  period: string;
+  description: string;
+  details?: string[]; // La propiedad que falta
+  tags?: { name: string; category: string }[];
+}
+
+const experienceEs = cvEs.experience as ExperienceItem[];
+const experienceEn = cvEn.experience as ExperienceItem[];
 
 const getDuration = (index: number) => {
   const durations = ["4 años y 1 mes", "1 año y 10 meses", "4 años y 1 mes"];
@@ -32,7 +42,6 @@ const getDuration = (index: number) => {
           const itemEn = experienceEn[index];
           const isEven = index % 2 === 0;
           const isWork = item.type === 'work';
-          // Cambiado zinc-500 a zinc-600 para mejor contraste en el ribbon
           const colorClass = isWork ? 'fill-zinc-600 dark:fill-zinc-500' : 'fill-orange-500 dark:fill-orange-400';
 
           return (
@@ -83,9 +92,23 @@ const getDuration = (index: number) => {
                     <div class="expand-container grid grid-rows-[0fr] transition-all duration-500 ease-in-out opacity-0 pointer-events-none">
                       <div class="overflow-hidden">
                         <div class="pt-4 mt-4 border-t border-zinc-100 dark:border-white/10">
-                          <p class="text-zinc-700 dark:text-zinc-400 text-sm leading-relaxed mb-6" data-es={item.description} data-en={itemEn.description}>
+                          <p class="text-zinc-700 dark:text-zinc-400 text-sm leading-relaxed mb-4" data-es={item.description} data-en={itemEn.description}>
                             {item.description}
                           </p>
+
+                          {/* CAMBIO: Lista de detalles estilo imagen */}
+                          {item.details && (
+                            <ul class="mb-6 space-y-2">
+                              {item.details.map((detail, i) => (
+                                <li class="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-400">
+                                  <span class="text-cyan-600 dark:text-cyan-500 mt-1.5 shrink-0">•</span>
+                                  <span data-es={detail} data-en={itemEn.details ? itemEn.details[i] : detail}>
+                                    {detail}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                           
                           {item.tags && (
                             <div class="flex flex-wrap gap-x-6 gap-y-4">
@@ -125,7 +148,7 @@ const getDuration = (index: number) => {
   
   .timeline-card.is-expanded .chevron-icon {
     transform: rotate(180deg);
-    color: #0891b2; /* Cyan-600 para mejor contraste */
+    color: #0891b2;
   }
 
   .timeline-card:hover {

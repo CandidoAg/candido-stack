@@ -1,15 +1,15 @@
 {
   "hero": {
     "name": "Cándido Aguilar",
-    "role": "Full stack Developer",
+    "role": "Senior Full Stack Developer",
     "specialty": "Specialized in critical systems.",
     "description": "My approach combines backend robustness with the agility of modern architectures.",
-    "featuredSkills": ["Grails", "TypeScript",  "React", "Tailwind CSS", "Apache Kafka"],
+    "featuredSkills": ["Grails", "TypeScript", "React", "Tailwind CSS", "Apache Kafka"],
     "about": [
-      {"paragraph1": "<span class='highlight'>Full stack</span> Developer with a solid focus on creating <span class='highlight'>scalable and secure</span> applications. My professional journey has centered on developing <span class='highlight'>critical platforms</span> for managing government procedures and international consular services."},
-      {"paragraph2": "I have built complex workflows for the acquisition of official documents and visas, ensuring <span class='highlight'>data integrity</span> in high-security environments and integrating large-scale financial systems such as <span class='highlight'>payment gateways</span> and <span class='highlight'>SAP</span> ecosystems."},
-      {"paragraph3": "Outside of my professional environment, I am passionate about exploring modern architectures. I apply patterns like <span class='highlight'>Hexagonal Architecture</span> and <span class='highlight'>DDD</span> in my personal projects, experimenting with <span class='highlight'>cloud-native</span> technologies and asynchronous messaging systems like <span class='highlight'>Kafka</span>."}
-    ]  
+      { "paragraph1": "<span class='highlight'>Full stack</span> Developer with a solid focus on creating <span class='highlight'>scalable and secure</span> applications. My professional career has focused on developing <span class='highlight'>critical platforms</span> for managing government procedures and international consular services." },
+      { "paragraph2": "I have built complex workflows for the acquisition of official documents and visas, ensuring <span class='highlight'>data integrity</span> in high-security environments and integrating large-scale financial systems such as <span class='highlight'>payment gateways</span> and <span class='highlight'>SAP</span> ecosystems." },
+      { "paragraph3": "Outside the professional environment, I am passionate about exploring modern architectures. I apply patterns like <span class='highlight'>Hexagonal Architecture</span> and <span class='highlight'>DDD</span> in my personal projects, experimenting with <span class='highlight'>cloud-native</span> technologies and asynchronous messaging systems like <span class='highlight'>Kafka</span>." }
+    ]
   },
   "experience": [
     {
@@ -17,15 +17,26 @@
       "company": "CM.com",
       "position": "Full stack Developer",
       "period": "Sept 2021 — Present",
-      "description": "Development and maintenance of a critical large-scale government services platform. Responsible for implementing complete end-to-end user flows, from the interactive frontend to the backend logic. Key role in the integration of financial systems and proprietary payment gateways, ensuring the reliability of international transactions.",
+      "description": "Development and maintenance of a critical large-scale government services platform for managing international procedures and transactions.",
+      "details": [
+        "Development of architecture and technical evolution of government platforms.",
+        "Integration of payment gateways and E2E user flows (UI to Backend).",
+        "Backend with Groovy/Grails and build automation with Gradle.",
+        "Dynamic interfaces with HTML, CSS, JavaScript, TypeScript, and Bootstrap.",
+        "Administration of high-transaction MySQL databases.",
+        "Deployment and management of WAR applications on Apache Tomcat servers.",
+        "Version control and technical collaboration using GitHub."
+      ],
       "tags": [
-        { "name": "JavaScript", "category": "Languages" },
-        { "name": "Groovy", "category": "Languages" },
-        { "name": "MySQL", "category": "Databases" },
-        { "name": "HTML5", "category": "Frontend"},
+        { "name": "Groovy", "category": "Core Stack" },
+        { "name": "JavaScript", "category": "Core Stack" },
+        { "name": "MySQL", "category": "Data & Ops" },
+        { "name": "HTML5", "category": "Frontend" },
         { "name": "CSS3", "category": "Frontend" },
         { "name": "Bootstrap", "category": "Frontend" },
-        { "name": "Grails", "category": "Fullstack" }
+        { "name": "Grails", "category": "Core Stack" },
+        { "name": "Spock", "category": "Tooling & QA" },
+        { "name": "Gradle", "category": "Tooling & QA" }
       ]
     },
     {
@@ -33,15 +44,26 @@
       "company": "VIPERA Plc",
       "position": "Software Developer",
       "period": "Dec 2019 — Sept 2021",
-      "description": "Implementation of web solutions for managing consular and administrative procedures. Development of advanced monitoring dashboards and internal administration tools. Specialized in data synchronization with SAP business systems and in optimizing document request processes for high-security environments.",
+      "description": "Development of systems for consular and internal management, integrating SAP ecosystems and optimizing document processes in high-security environments.",
+      "details": [
+        "Backend development with Java, Groovy, and Grails (v2 to v5) under MVC architecture.",
+        "Digitization of consular procedures and management of administrative flows.",
+        "Development of monitoring panels and internal management tools.",
+        "Integration and synchronization of data with SAP business systems.",
+        "Optimization of processes for the validation of official documentation.",
+        "Maintenance and deployment of WAR applications on Linux servers.",
+        "Implementation of payment gateways in highly critical systems."
+      ],
       "tags": [
-        { "name": "Groovy", "category": "Languages" },
-        { "name": "JavaScript", "category": "Languages" },
-        { "name": "MySQL", "category": "Databases" },
-        { "name": "HTML5", "category": "Frontend"},
+        { "name": "Groovy", "category": "Core Stack" },
+        { "name": "Java", "category": "Core Stack" },
+        { "name": "MySQL", "category": "Data & Ops" },
+        { "name": "HTML5", "category": "Frontend" },
         { "name": "CSS3", "category": "Frontend" },
         { "name": "Bootstrap", "category": "Frontend" },
-        { "name": "Grails", "category": "Fullstack" }
+        { "name": "Grails", "category": "Core Stack" },
+        { "name": "Spock", "category": "Tooling & QA" },
+        { "name": "Gradle", "category": "Tooling & QA" }
       ]
     },
     {
@@ -58,19 +80,27 @@
       "title": "RetroVault",
       "description": "E-commerce with Hexagonal Architecture and DDD. Asynchronous communication via Kafka and Saga pattern.",
       "tags": [
-        { "name": "TypeScript", "category": "Languages" },
-        { "name": "PostgreSQL", "category": "Databases" },
-        { "name": "Apache Kafka", "category": "Infrastructure" },
-        { "name": "Docker", "category": "Infrastructure" },
-        { "name": "Vitest", "category": "Testing" },
-        { "name": "Testcontainers", "category": "Testing" },
-        { "name": "Node.js", "category": "Tools" },
-        { "name": "Stripe", "category": "Tools" },
-        { "name": "Prisma", "category": "Tools" },
-        { "name": "Zod", "category": "Tools" },
-        { "name": "pnpm", "category": "Tools" },
-        { "name": "Turborepo", "category": "Tools" },
-        { "name": "Vite", "category": "Tools" }
+        { "name": "TypeScript", "category": "Core Stack" },
+        { "name": "PostgreSQL", "category": "Data & Ops" },
+        { "name": "NestJS", "category": "Core Stack" },
+        { "name": "Fastify", "category": "Core Stack" },
+        { "name": "Next.js", "category": "Frontend" },
+        { "name": "React", "category": "Frontend" },
+        { "name": "Tailwind CSS", "category": "Frontend" },
+        { "name": "React Query", "category": "Frontend" },
+        { "name": "Lucide React", "category": "Frontend" },
+        { "name": "Apache Kafka", "category": "Data & Ops" },
+        { "name": "Docker", "category": "Data & Ops" },
+        { "name": "Vitest", "category": "Tooling & QA" },
+        { "name": "Testcontainers", "category": "Tooling & QA" },
+        { "name": "Node.js", "category": "Tooling & QA" },
+        { "name": "Stripe", "category": "Tooling & QA" },
+        { "name": "Prisma", "category": "Tooling & QA" },
+        { "name": "Zod", "category": "Tooling & QA" },
+        { "name": "pnpm", "category": "Tooling & QA" },
+        { "name": "Turborepo", "category": "Tooling & QA" },
+        { "name": "Vite", "category": "Tooling & QA" },
+        { "name": "JWT", "category": "Tooling & QA" }
       ],
       "github": "https://github.com/CandidoAg/retrovault",
       "link": "#",
@@ -78,12 +108,12 @@
     },
     {
       "title": "NoteStack",
-      "description": "Cloud-Native task manager with React Native. Real-time synchronization and secure architecture.",
+      "description": "Cloud-native task manager with React Native. Real-time synchronization and secure architecture.",
       "tags": [
-        { "name": "TypeScript", "category": "Languages" },
-        { "name": "Cloud Firestore", "category": "Databases" },
-        { "name": "React Native", "category": "Mobile" },
-        { "name": "Expo", "category": "Tools" }
+        { "name": "TypeScript", "category": "Core Stack" },
+        { "name": "Cloud Firestore", "category": "Data & Ops" },
+        { "name": "React Native", "category": "Core Stack" },
+        { "name": "Expo", "category": "Tooling & QA" }
       ],
       "github": "https://github.com/CandidoAg/app-notas",
       "link": "#",
@@ -93,11 +123,11 @@
       "title": "Candido Stack",
       "description": "High-performance professional portfolio. Focused on asset optimization, certified accessibility, and modern architecture.",
       "tags": [
-        { "name": "Astro", "category": "Fullstack" },
+        { "name": "Astro", "category": "Core Stack" },
         { "name": "Tailwind CSS", "category": "Frontend" },
-        { "name": "TypeScript", "category": "Languages" },
-        { "name": "Sharp", "category": "Tools" },
-        { "name": "Vercel", "category": "Infrastructure" }
+        { "name": "TypeScript", "category": "Core Stack" },
+        { "name": "Sharp", "category": "Tooling & QA" },
+        { "name": "Vercel", "category": "Data & Ops" }
       ],
       "github": "https://github.com/CandidoAg/candido-stack",
       "image": "/images/portfolio",

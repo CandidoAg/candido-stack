@@ -5,7 +5,8 @@ import { Icon } from 'astro-icon/components';
 const { isFooter } = Astro.props;
 ---
 <nav class={"flex flex-wrap items-center gap-4" + (!isFooter ? " mt-8" : "")} aria-label={"Hero Actions" + (isFooter ? "Footer" : "")}>
-  {cvContact.contact.email.length > 0 && (
+  <div class="flex items-center gap-3">
+    {cvContact.contact.email.length > 0 && (
       <a href={`mailto:${cvContact.contact.email}`}
         class="p-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/10
           text-zinc-600 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-400
@@ -15,7 +16,6 @@ const { isFooter } = Astro.props;
       </a>
     )}
 
-  <div class="flex items-center gap-3">
     {cvContact.contact.linkedin.length > 0 && (
       <a href={cvContact.contact.linkedin} target="_blank" rel="noopener noreferrer"
         class="p-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-white/10
@@ -38,7 +38,7 @@ const { isFooter } = Astro.props;
 
     {(cvContact.contact.curriculum.length > 0 && !isFooter) && (
         <a href={cvContact.contact.curriculum} target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-6 py-3 
+          class="inline-flex items-center gap-2 md:px-6 px-4 py-3
             bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 
             hover:bg-cyan-600 dark:hover:bg-cyan-400
             rounded-xl transition-all duration-300 hover:-translate-y-1 font-medium">

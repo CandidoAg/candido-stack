@@ -3,6 +3,7 @@ import LanguageSelector from './LanguageSelector.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import cvEs from '../data/cv.json';
 import cvEn from '../data/cv-en.json';
+import { Menu, X, Home, Code, Briefcase, Folder, User } from 'lucide-react';
 
 const translations = {
   es: cvEs.hero,
@@ -13,29 +14,28 @@ const translations = {
 <header class="fixed top-0 left-0 w-full z-50 pointer-events-none">
   <nav class="mx-auto pointer-events-auto
     bg-white/70 border-b border-zinc-200 shadow-xl
-    dark:bg-zinc-950/70 dark:border-white/10 
-    backdrop-blur-xl px-4 py-2.5 transition-all duration-300">
+    dark:bg-zinc-950/80 dark:border-white/5 
+    backdrop-blur-2xl px-4 py-2.5 transition-all duration-500">
     
     <div class="max-w-5xl w-full flex items-center justify-between mx-auto gap-4">
       
-      <div class="flex-shrink-0">
+      <div class="flex-shrink-0 flex items-center gap-4">
+        <button id="menu-toggle" class="md:hidden text-zinc-900 dark:text-zinc-100 p-2 hover:bg-zinc-100 dark:hover:bg-white/10 rounded-xl transition-all relative w-10 h-10 flex items-center justify-center" aria-label="Toggle Menu">
+            <div id="icon-menu" class="absolute transition-all duration-300 opacity-100 scale-100">
+              <Menu size={24} />
+            </div>
+            <div id="icon-close" class="absolute transition-all duration-300 opacity-0 scale-50 pointer-events-none">
+              <X size={24} />
+            </div>
+        </button>
+
         <a href="/" class="flex items-center gap-2 md:gap-3 group transition-transform active:scale-95">
-          <div class="relative w-8 h-8 rounded-full overflow-hidden border border-zinc-200 dark:border-white/10 shadow-sm">
-            <img 
-              src="/favicon-light.svg" 
-              alt="CAC Logo" 
-              class="w-full h-full object-cover dark:hidden group-hover:scale-110 transition-transform duration-300"
-            />
-            <img 
-              src="/favicon-dark.svg" 
-              alt="CAC Logo" 
-              class="w-full h-full object-cover hidden dark:block group-hover:scale-110 transition-transform duration-300"
-            />
+          <div class="relative w-8 h-8 rounded-full overflow-hidden border border-zinc-200 dark:border-white/20 shadow-inner">
+            <img src="/favicon-light.svg" alt="Logo" class="w-full h-full object-cover dark:hidden" />
+            <img src="/favicon-dark.svg" alt="Logo" class="w-full h-full object-cover hidden dark:block" />
           </div>
-          <span class="text-sm font-bold text-zinc-900 dark:text-white tracking-tight hidden xs:block"
-                data-es={translations.es.name}
-                data-en={translations.en.name}>
-            
+          <span class="text-sm font-bold text-zinc-900 dark:text-zinc-100 tracking-tight hidden xs:block"
+                data-es={translations.es.name} data-en={translations.en.name}>
           </span>
         </a>
       </div>
@@ -55,55 +55,109 @@ const translations = {
         <div class="w-px h-4 bg-zinc-200 dark:bg-white/10 mx-1"></div>
         <ThemeToggle />
       </div>
-      
     </div>
 
-    <div class="flex md:hidden items-center justify-center gap-4 mt-2 border-t border-zinc-100 dark:border-white/5 pt-2 overflow-x-auto no-scrollbar">
-        <a href="#home" class="nav-link" data-es="Inicio" data-en="Home">Home</a>
-        <a href="#skills" class="nav-link" data-es="Skills" data-en="Skills">Skills</a>
-        <a href="#trayectoria" class="nav-link" data-es="Experiencia" data-en="Experience">Experience</a>
-        <a href="#proyectos" class="nav-link" data-es="Proyectos" data-en="Projects">Projects</a>
-        <a href="#about" class="nav-link" data-es="Sobre mí" data-en="About">About</a>
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-zinc-900/95 backdrop-blur-3xl border-b border-zinc-200 dark:border-white/10 shadow-2xl">
+        <div class="grid grid-cols-2 gap-3 p-5">
+            <a href="#home" class="mobile-nav-card group" data-es="Inicio" data-en="Home">
+                <Home size={20} className="mb-2 text-zinc-500 group-hover:text-cyan-500 transition-colors" />
+                <span>Inicio</span>
+            </a>
+            <a href="#skills" class="mobile-nav-card group" data-es="Skills" data-en="Skills">
+                <Code size={20} className="mb-2 text-zinc-500 group-hover:text-purple-500 transition-colors" />
+                <span>Skills</span>
+            </a>
+            <a href="#trayectoria" class="mobile-nav-card group" data-es="Experiencia" data-en="Experience">
+                <Briefcase size={20} className="mb-2 text-zinc-500 group-hover:text-orange-500 transition-colors" />
+                <span>Experiencia</span>
+            </a>
+            <a href="#proyectos" class="mobile-nav-card group" data-es="Proyectos" data-en="Projects">
+                <Folder size={20} className="mb-2 text-zinc-500 group-hover:text-green-500 transition-colors" />
+                <span>Proyectos</span>
+            </a>
+            <a href="#about" class="mobile-nav-card col-span-2 flex-row gap-4 group" data-es="Sobre mí" data-en="About">
+                <User size={20} className="text-zinc-500 group-hover:text-pink-500 transition-colors" />
+                <span>Sobre mí</span>
+            </a>
+        </div>
     </div>
-
   </nav>
 </header>
 
 <style>
   .nav-link {
-    @apply text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors whitespace-nowrap font-medium;
+    @apply text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-medium;
   }
   
-  .nav-link-mobile {
-    @apply text-[11px] uppercase tracking-wider font-bold text-zinc-500 dark:text-zinc-500 hover:text-cyan-600 transition-colors whitespace-nowrap px-1;
+  .mobile-nav-card {
+    @apply flex flex-col items-center justify-center p-5 rounded-2xl 
+    bg-zinc-100/50 dark:bg-white/[0.04] 
+    border border-zinc-200 dark:border-white/[0.08]
+    text-[13px] font-bold text-zinc-700 dark:text-zinc-300 
+    active:scale-95 transition-all duration-300;
   }
 
-  /* Esconder la barra de scroll pero mantener funcionalidad */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  /* Clases de utilidad para el botón */
+  .is-open #icon-menu {
+    @apply opacity-0 scale-50 rotate-90;
   }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .is-open #icon-close {
+    @apply opacity-100 scale-100 rotate-0;
   }
 
-  /* Breakpoint extra para el nombre del logo */
+  #mobile-menu.active {
+    display: block;
+    animation: revealMenu 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes revealMenu {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   @media (min-width: 400px) {
     .xs\:block { display: block; }
   }
 </style>
 
 <script>
-  // Script de traducción para el header
-  const updateHeader = () => {
-    const lang = localStorage.getItem('lang') || 'es';
-    document.querySelectorAll('header [data-es]').forEach(el => {
-      const text = el.getAttribute(`data-${lang}`);
-      if (text) el.textContent = text;
-    });
-  };
+  function setupHeader() {
+    const btn = document.querySelector('#menu-toggle');
+    const menu = document.querySelector('#mobile-menu');
+    const links = document.querySelectorAll('.mobile-nav-card');
 
-  window.addEventListener('language-changed', updateHeader);
-  updateHeader();
-  document.addEventListener('astro:after-swap', updateHeader);
+    const toggleMenu = () => {
+        const isOpen = menu?.classList.toggle('active');
+        btn?.classList.toggle('is-open');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    btn?.addEventListener('click', toggleMenu);
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu?.classList.remove('active');
+            btn?.classList.remove('is-open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    const updateHeader = () => {
+      const lang = localStorage.getItem('lang') || 'es';
+      document.querySelectorAll('header [data-es]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          const span = el.querySelector('span');
+          if (span) span.textContent = text;
+          else el.textContent = text;
+        }
+      });
+    };
+
+    window.addEventListener('language-changed', updateHeader);
+    updateHeader();
+  }
+
+  setupHeader();
+  document.addEventListener('astro:after-swap', setupHeader);
 </script>
