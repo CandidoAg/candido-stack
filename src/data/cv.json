@@ -16,7 +16,7 @@
       "type": "work",
       "company": "CM.com",
       "position": "Desarrollador Full stack",
-      "period": "Sept 2021 — Presente",
+      "period": "Sep 2021 — Presente",
       "description": "Desarrollo y mantenimiento de una plataforma crítica de servicios gubernamentales a gran escala para la gestión de trámites y transacciones internacionales.",
       "details": [
         "Desarrollo de arquitectura y evolución técnica de plataformas gubernamentales.",
@@ -43,7 +43,7 @@
       "type": "work",
       "company": "VIPERA Plc",
       "position": "Desarrollador de Software",
-      "period": "Dic 2019 — Sept 2021",
+      "period": "Dic 2019 — Sep 2021",
       "description": "Desarrollo de sistemas para gestión consular e interna, integrando ecosistemas SAP y optimizando procesos documentales en entornos de alta seguridad.",
       "details": [
         "Desarrollo Backend con Java, Groovy y Grails (v2 a v5) bajo arquitectura MVC.",
@@ -70,7 +70,7 @@
       "type": "learning",
       "company": "Universidad de Extremadura",
       "position": "Grado en Ingeniería Informática en Ingeniería del Software",
-      "period": "2015 — 2019",
+      "period": "Sep 2015 — Oct 2019",
       "description": "Especialización en arquitectura de software y algoritmos.",
       "tags": []
     }

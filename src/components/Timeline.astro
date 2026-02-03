@@ -11,17 +11,47 @@ interface ExperienceItem {
   position: string;
   period: string;
   description: string;
-  details?: string[]; // La propiedad que falta
+  details?: string[];
   tags?: { name: string; category: string }[];
 }
 
 const experienceEs = cvEs.experience as ExperienceItem[];
 const experienceEn = cvEn.experience as ExperienceItem[];
 
-const getDuration = (index: number) => {
-  const durations = ["4 años y 1 mes", "1 año y 10 meses", "4 años y 1 mes"];
-  return durations[index] || "";
-}
+const calculateDuration = (period: string) => {
+  const months: Record<string, number> = {
+    'ene': 0, 'feb': 1, 'mar': 2, 'abr': 3, 'may': 4, 'jun': 5,
+    'jul': 6, 'ago': 7, 'sept': 8, 'oct': 9, 'nov': 10, 'dic': 11,
+    'jan': 0, 'sep': 8 
+  };
+
+  const parseDate = (dateStr: string) => {
+    const cleanStr = dateStr.trim().toLowerCase();
+    if (cleanStr.includes('present') || cleanStr.includes('presente')) return new Date();
+    
+    const [monthStr, yearStr] = cleanStr.split(' ');
+    const month = months[monthStr.replace('.', '')] || 0;
+    return new Date(parseInt(yearStr), month);
+  };
+
+  const [startStr, endStr] = period.split('—');
+  const startDate = parseDate(startStr);
+  const endDate = parseDate(endStr);
+
+  let years = endDate.getFullYear() - startDate.getFullYear();
+  let monthsDiff = endDate.getMonth() - startDate.getMonth();
+
+  if (monthsDiff < 0) {
+    years--;
+    monthsDiff += 12;
+  }
+
+  // Formateo de salida (puedes ajustar el idioma aquí o hacerlo reactivo)
+  const yearsPart = years > 0 ? `${years} ${years === 1 ? 'año' : 'años'}` : '';
+  const monthsPart = monthsDiff > 0 ? `${monthsDiff} ${monthsDiff === 1 ? 'mes' : 'meses'}` : '';
+  
+  return [yearsPart, monthsPart].filter(Boolean).join(' y ');
+};
 ---
 
 <section id="trayectoria" class="py-10 px-4 md:px-6 transition-colors duration-300">
@@ -84,7 +114,7 @@ const getDuration = (index: number) => {
                         
                         <div class="text-zinc-600 dark:text-zinc-400 text-[11px] md:text-[13px] mt-2 font-medium italic">
                           <span class="not-italic block md:inline" data-es={item.period} data-en={itemEn.period}>{item.period}</span>
-                          <span class="block md:inline md:ml-1 not-italic font-bold text-zinc-500 dark:text-zinc-500">({getDuration(index)})</span>
+                          <span class="block md:inline md:ml-1 not-italic font-bold text-zinc-500 dark:text-zinc-500">({calculateDuration(item.period)})</span>
                         </div>
                       </div>
                     </div>
