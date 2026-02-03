@@ -1,26 +1,48 @@
 ---
 import cvEs from '../data/cv.json';
 import cvEn from '../data/cv-en.json';
-import { Github } from 'lucide-react';
+import { Layers } from 'lucide-react';
 import { Icon } from 'astro-icon/components';
 import { getIconName } from '../utils/icons';
 
-const projectsEs = cvEs.projects;
-const projectsEn = cvEn.projects;
+interface Tag {
+  name: string;
+  category: string;
+  important?: boolean;
+}
+
+interface Project {
+  title: string;
+  description: string;
+  tags: Tag[];
+  image?: string;
+  link: string;
+  github?: string;
+  featured: boolean;
+}
+
+const projectsEs = cvEs.projects as Project[];
+const projectsEn = cvEn.projects as Project[];
+
+const getPartitionedTags = (tags: Tag[], isFeatured: boolean) => {
+  const limit = isFeatured ? 6 : 4;
+  const sortedTags = [...tags].sort((a, b) => {
+    if (a.important === b.important) return 0;
+    return a.important ? -1 : 1;
+  });
+
+  return {
+    visible: sortedTags.slice(0, limit),
+    hidden: sortedTags.slice(limit)
+  };
+};
 ---
 
 <section id="proyectos" class="py-10 px-6 transition-colors duration-300">
-  <div class="max-w-5xl mx-auto
-    bg-zinc-50 border-zinc-200 
-    dark:bg-zinc-900/40 dark:border-white/5 
-    rounded-[3rem] p-8 md:p-16 relative overflow-hidden group shadow-sm dark:shadow-2xl">
+  <div class="max-w-5xl mx-auto bg-zinc-50 border-zinc-200 dark:bg-zinc-900/40 dark:border-white/5 rounded-[3rem] p-8 md:p-16 relative overflow-hidden group shadow-sm dark:shadow-2xl">
     
     <div class="flex items-center gap-2 mb-16 justify-center">
-      <h2 
-        class="text-zinc-900 dark:text-white text-3xl font-bold tracking-tighter uppercase"
-        data-es="Proyectos"
-        data-en="Projects"
-      >
+      <h2 class="text-zinc-900 dark:text-white text-3xl font-bold tracking-tighter uppercase" data-es="Proyectos" data-en="Projects">
         Proyectos
       </h2>
     </div>
@@ -29,98 +51,83 @@ const projectsEn = cvEn.projects;
       {projectsEs.map((project, index) => {
         const projectEn = projectsEn[index];
         const hasImage = project.image && project.image !== "";
+        const { visible, hidden } = getPartitionedTags(project.tags, project.featured);
 
         return (
           <div class={project.featured ? "md:col-span-4" : "md:col-span-3"}>
-            <div class="group h-full p-8 
-              bg-white border-zinc-200 
-              dark:bg-zinc-900/40 dark:border-zinc-800 
-              rounded-[2.5rem] hover:border-cyan-500/30 dark:hover:border-zinc-700 
-              transition-all duration-500 flex flex-col shadow-sm dark:shadow-xl">
+            <div class="group h-full p-8 bg-white border-zinc-200 dark:bg-zinc-900/40 dark:border-zinc-800 rounded-[2.5rem] hover:border-cyan-500/30 dark:hover:border-zinc-700 transition-all duration-500 flex flex-col shadow-sm dark:shadow-xl">
               
               <div class="flex-grow">
                 <div class="flex justify-between items-start mb-6">
                   <div class="relative group/logo">
                     {hasImage ? (
-                      <a 
-                        href={project.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        data-project-link
-                        class="block overflow-hidden rounded-2xl border border-zinc-100 dark:border-white/5 shadow-md hover:shadow-cyan-500/20 transition-all duration-500"
-                      >
-                        <img 
-                          src={`${project.image}-light.webp`} 
-                          alt={project.title} 
-                          width="400"
-                          height="400"
-                          class="object-cover dark:hidden group-hover/logo:scale-110 transition-transform duration-500"
-                        />
-                        <img 
-                          src={`${project.image}-dark.webp`} 
-                          alt={project.title} 
-                          width="400"
-                          height="400"
-                          class="object-cover hidden dark:block group-hover/logo:scale-110 transition-transform duration-500"
-                        />
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" data-project-link class="block overflow-hidden rounded-2xl border border-zinc-100 dark:border-white/5 shadow-md hover:shadow-cyan-500/20 transition-all duration-500">
+                        <img src={`${project.image}-light.webp`} alt={project.title} width="400" height="400" class="object-cover dark:hidden group-hover/logo:scale-110 transition-transform duration-500" />
+                        <img src={`${project.image}-dark.webp`} alt={project.title} width="400" height="400" class="object-cover hidden dark:block group-hover/logo:scale-110 transition-transform duration-500" />
                       </a>
                     ) : (
-                      <div class="p-4 
-                        bg-zinc-50 border-zinc-100 text-cyan-800
-                        dark:bg-zinc-950/50 dark:border-white/5 dark:text-cyan-500 
-                        rounded-2xl group-hover:scale-110 transition-all duration-500">
-                        <Icon name="lucide:layers" class="w-6 h-6" />
+                      <div class="p-4 bg-zinc-50 border-zinc-100 text-cyan-800 dark:bg-zinc-950/50 dark:border-white/5 dark:text-cyan-500 rounded-2xl group-hover:scale-110 transition-all duration-500">
+                        <Layers size={24} />
                       </div>
                     )}
                   </div>
                 </div>
 
-                <h3 
-                  class="text-2xl font-bold mb-3 tracking-tight text-zinc-900 dark:text-white group-hover:text-cyan-800 dark:group-hover:text-cyan-400 transition-colors"
-                  data-es={project.title}
-                  data-en={projectEn.title}
-                >
+                <h3 class="text-2xl font-bold mb-3 tracking-tight text-zinc-900 dark:text-white group-hover:text-cyan-800 dark:group-hover:text-cyan-400 transition-colors" data-es={project.title} data-en={projectEn.title}>
                   {project.title}
                 </h3>
-                <p 
-                  class="text-zinc-600 dark:text-zinc-400 text-sm mb-8 leading-relaxed font-light"
-                  data-es={project.description}
-                  data-en={projectEn.description}
-                >
+                <p class="text-zinc-600 dark:text-zinc-400 text-sm mb-8 leading-relaxed font-light" data-es={project.description} data-en={projectEn.description}>
                   {project.description}
                 </p>
 
-                <div class="flex flex-wrap gap-4 mb-6">
-                  {project.tags.map((tag) => (
+                <div class="tags-container flex flex-wrap gap-4 mb-6 items-start">
+                  {visible.map((tag) => (
                     <div class="flex flex-col items-center gap-2 group/item">
-                      <div class="w-12 h-12 flex items-center justify-center rounded-2xl 
-                        bg-zinc-50 border-zinc-100
-                        dark:bg-zinc-950/60 dark:border-zinc-800 
-                        group-hover/item:border-cyan-500/50 group-hover/item:bg-cyan-500/5 
-                        transition-all duration-300">
+                      <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-zinc-50 border border-zinc-100 dark:bg-zinc-950/60 dark:border-zinc-800 group-hover/item:border-cyan-500/50 group-hover/item:bg-cyan-500/5 transition-all duration-300">
                         <Icon name={getIconName(tag.name)} class="w-6 h-6 text-gray-600 dark:text-zinc-500 group-hover/item:text-cyan-500 transition-colors" />
                       </div>
-                      <span class="text-[9px] font-mono text-zinc-500 dark:text-zinc-300 uppercase tracking-tighter group-hover/item:text-zinc-900 dark:group-hover/item:text-white transition-colors">
+                      <span class="text-[9px] font-mono text-zinc-500 dark:text-zinc-300 uppercase tracking-tighter">
                         {tag.name}
                       </span>
                     </div>
                   ))}
+
+                  {hidden.map((tag) => (
+                    <div class="hidden-tag hidden flex-col items-center gap-2 group/item opacity-0 transition-opacity duration-200">
+                      <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-zinc-50 border border-zinc-100 dark:bg-zinc-950/60 dark:border-zinc-800">
+                        <Icon name={getIconName(tag.name)} class="w-6 h-6 text-gray-600 dark:text-zinc-500" />
+                      </div>
+                      <span class="text-[9px] font-mono text-zinc-500 dark:text-zinc-300 uppercase tracking-tighter">
+                        {tag.name}
+                      </span>
+                    </div>
+                  ))}
+
+                  {hidden.length > 0 && (
+                    <button 
+                      class="expand-tags-btn group/btn flex flex-col items-center gap-2 transition-all duration-300"
+                      data-collapsed-val={`+${hidden.length}`}
+                    >
+                      <div class="btn-icon-container w-12 h-12 flex items-center justify-center rounded-2xl bg-zinc-100 border border-dashed border-zinc-300 dark:bg-white/5 dark:border-white/10 group-hover/btn:border-cyan-500/50 group-hover/btn:bg-cyan-500/10 transition-all">
+                        <span class="btn-label text-xs font-bold text-zinc-500 dark:text-zinc-400 group-hover/btn:text-cyan-500">
+                          +{hidden.length}
+                        </span>
+                      </div>
+                      <span 
+                        class="btn-subtext text-[9px] font-mono text-zinc-400 uppercase tracking-tighter group-hover/btn:text-cyan-500"
+                        data-es="Más"
+                        data-en="More"
+                      >
+                        Más
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
 
               {project.github && (
                 <div class="mt-2 pt-2">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center gap-2 px-6 py-3 w-full
-                          bg-zinc-800 text-white border border-zinc-700
-                          dark:bg-white dark:text-zinc-900 dark:border-transparent
-                          rounded-2xl font-medium text-sm transition-all duration-300
-                          hover:scale-[1.02] hover:bg-zinc-900 dark:hover:bg-zinc-100
-                          hover:shadow-xl hover:shadow-cyan-500/10 active:scale-95"
-                  >
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 w-full bg-zinc-800 text-white border border-zinc-700 dark:bg-white dark:text-zinc-900 dark:border-transparent rounded-2xl font-medium text-sm transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-900 dark:hover:bg-zinc-100 hover:shadow-xl hover:shadow-cyan-500/10 active:scale-95">
                     <Icon name={"lucide:github"} size={18} />
                     <span data-es="Ver código" data-en="View code">Ver código</span>
                   </a>
@@ -134,26 +141,57 @@ const projectsEn = cvEn.projects;
   </div>
 </section>
 
-<script>
-  const syncProjectLinks = () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    const theme = isDark ? 'dark' : 'light';
-    const lang = localStorage.getItem('lang') || 'es';
-    
-    const links = document.querySelectorAll('[data-project-link]');
-    
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-      if (!href || href === '#' || href.startsWith('#')) return;
+<style>
+  .hidden-tag.is-open {
+    display: flex !important;
+    opacity: 1 !important;
+  }
 
-      try {
-        const url = new URL(href, window.location.origin);
-        url.searchParams.set('theme', theme);
-        url.searchParams.set('lang', lang);
-        link.setAttribute('href', url.toString());
-      } catch (e) {
-        console.error("Error al sincronizar el link:", href);
-      }
+  .expand-tags-btn.is-active .btn-icon-container {
+    @apply bg-red-500/10 border-red-500/40 border-solid;
+  }
+  .expand-tags-btn.is-active .btn-label,
+  .expand-tags-btn.is-active .btn-subtext {
+    @apply text-red-500;
+  }
+</style>
+
+<script>
+  const setupTagExpansion = () => {
+    const containers = document.querySelectorAll('.tags-container');
+    
+    containers.forEach(container => {
+      const btn = container.querySelector('.expand-tags-btn') as HTMLButtonElement;
+      if (!btn) return;
+
+      const hiddenTags = container.querySelectorAll('.hidden-tag');
+      const label = btn.querySelector('.btn-label') as HTMLElement;
+      const subtext = btn.querySelector('.btn-subtext') as HTMLElement;
+
+      const newBtn = btn.cloneNode(true) as HTMLButtonElement;
+      btn.parentNode?.replaceChild(newBtn, btn);
+
+      newBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = localStorage.getItem('lang') || 'es';
+        const isOpening = !newBtn.classList.contains('is-active');
+
+        newBtn.classList.toggle('is-active');
+
+        if (isOpening) {
+          hiddenTags.forEach(tag => tag.classList.add('is-open'));
+          
+          if (label) label.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+          if (subtext) subtext.textContent = lang === 'es' ? 'Cerrar' : 'Close';
+          
+          container.appendChild(newBtn);
+        } else {
+          hiddenTags.forEach(tag => tag.classList.remove('is-open'));
+          
+          if (label) label.textContent = newBtn.getAttribute('data-collapsed-val') || "";
+          if (subtext) subtext.textContent = lang === 'es' ? 'Más' : 'More';
+        }
+      });
     });
   };
 
@@ -164,14 +202,24 @@ const projectsEn = cvEn.projects;
       const text = el.getAttribute(`data-${lang}`);
       if (text) el.textContent = text;
     });
-    syncProjectLinks();
+    
+    document.querySelectorAll('.expand-tags-btn').forEach(btn => {
+      const subtext = btn.querySelector('.btn-subtext') as HTMLElement;
+      if (subtext) {
+        const isActive = btn.classList.contains('is-active');
+        subtext.textContent = isActive 
+          ? (lang === 'es' ? 'Cerrar' : 'Close') 
+          : (lang === 'es' ? 'Más' : 'More');
+      }
+    });
+  };
+
+  const init = () => {
+    updateProjects();
+    setupTagExpansion();
   };
 
   window.addEventListener('language-changed', updateProjects);
-  
-  const observer = new MutationObserver(syncProjectLinks);
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-
-  updateProjects();
-  syncProjectLinks();
+  init();
+  document.addEventListener('astro:after-swap', init);
 </script>

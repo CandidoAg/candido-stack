@@ -71,7 +71,11 @@
       "company": "Universidad de Extremadura",
       "position": "Grado en Ingeniería Informática en Ingeniería del Software",
       "period": "Sep 2015 — Oct 2019",
-      "description": "Especialización en arquitectura de software y algoritmos.",
+      "description": "",
+      "details": [
+        "Proyecto Fin de Grado con calificación: 10/10 (Sobresaliente)",
+        "Desarrollo de un sistema de asistencia médica local-first mediante comunicación por proximidad entre móvil y hardware físico (Snips) sin dependencia de internet, base tecnológica del asistente 'Acho' de la Universidad de Extremadura (UEx)"
+      ],
       "tags": []
     }
   ],
@@ -80,25 +84,25 @@
       "title": "RetroVault",
       "description": "E-commerce con Arquitectura Hexagonal y DDD. Comunicación asíncrona mediante Kafka y patrón Saga.",
       "tags": [
-        { "name": "TypeScript", "category": "Core Stack" },
-        { "name": "PostgreSQL", "category": "Data & Ops" },
-        { "name": "NestJS", "category": "Core Stack" },
+        { "name": "TypeScript", "category": "Core Stack", "important": true },
+        { "name": "PostgreSQL", "category": "Data & Ops", "important": true },
+        { "name": "NestJS", "category": "Core Stack", "important": true },
         { "name": "Fastify", "category": "Core Stack" },
         { "name": "Next.js", "category": "Frontend" },
         { "name": "React", "category": "Frontend" },
         { "name": "Tailwind CSS", "category": "Frontend" },
         { "name": "React Query", "category": "Frontend" },
         { "name": "Lucide React", "category": "Frontend" },
-        { "name": "Apache Kafka", "category": "Data & Ops" },
+        { "name": "Apache Kafka", "category": "Data & Ops", "important": true },
         { "name": "Docker", "category": "Data & Ops" },
-        { "name": "Vitest", "category": "Tooling & QA" },
+        { "name": "Vitest", "category": "Tooling & QA", "important": true },
         { "name": "Testcontainers", "category": "Tooling & QA" },
         { "name": "Node.js", "category": "Tooling & QA" },
         { "name": "Stripe", "category": "Tooling & QA" },
         { "name": "Prisma", "category": "Tooling & QA" },
         { "name": "Zod", "category": "Tooling & QA" },
         { "name": "pnpm", "category": "Tooling & QA" },
-        { "name": "Turborepo", "category": "Tooling & QA" },
+        { "name": "Turborepo", "category": "Tooling & QA", "important": true },
         { "name": "Vite", "category": "Tooling & QA" },
         { "name": "JWT", "category": "Tooling & QA" }
       ],
@@ -110,10 +114,10 @@
       "title": "NoteStack",
       "description": "Gestor de tareas cloud-native con React Native. Sincronización en tiempo real y arquitectura segura.",
       "tags": [
-        { "name": "TypeScript", "category": "Core Stack" },
-        { "name": "Cloud Firestore", "category": "Data & Ops" },
-        { "name": "React Native", "category": "Core Stack" },
-        { "name": "Expo", "category": "Tooling & QA" }
+        { "name": "TypeScript", "category": "Core Stack", "important": true },
+        { "name": "Cloud Firestore", "category": "Data & Ops", "important": true },
+        { "name": "React Native", "category": "Core Stack", "important": true },
+        { "name": "Expo", "category": "Tooling & QA", "important": true }
       ],
       "github": "https://github.com/CandidoAg/app-notas",
       "link": "#",
@@ -123,10 +127,10 @@
       "title": "Candido Stack",
       "description": "Portfolio profesional de alto rendimiento. Enfocado en optimización de activos, accesibilidad certificada y arquitectura moderna.",
       "tags": [
-        { "name": "Astro", "category": "Core Stack" },
-        { "name": "Tailwind CSS", "category": "Frontend" },
-        { "name": "TypeScript", "category": "Core Stack" },
-        { "name": "Sharp", "category": "Tooling & QA" },
+        { "name": "Astro", "category": "Core Stack", "important": true },
+        { "name": "Tailwind CSS", "category": "Frontend", "important": true },
+        { "name": "TypeScript", "category": "Core Stack", "important": true },
+        { "name": "Sharp", "category": "Tooling & QA", "important": true },
         { "name": "Vercel", "category": "Data & Ops" }
       ],
       "github": "https://github.com/CandidoAg/candido-stack",
