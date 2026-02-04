@@ -2,6 +2,7 @@
 import '@fontsource-variable/inter';
 import '../styles/global.css';
 import SpeedInsights  from "@vercel/speed-insights/astro"
+import Analytics from '@vercel/analytics/astro'
 
 interface Props { 
   title: string; 
@@ -59,6 +60,7 @@ const { title } = Astro.props;
             }
         })();
         </script>
+        <Analytics />
     </head>
     <body class="bg-white text-zinc-900 dark:bg-[#030303] dark:text-gray-400 antialiased selection:bg-cyan-500/30 transition-colors duration-300"> 
         
