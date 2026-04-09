@@ -3,12 +3,12 @@
     "name": "Cándido Aguilar",
     "role": "Desarrollador senior Full stack",
     "specialty": "Especializado en sistemas críticos.",
-    "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas.",
+    "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas y la orquestación de agentes IA.",
     "featuredSkills": ["Grails", "TypeScript", "React", "Tailwind CSS", "Apache Kafka"],
     "about": [
       { "paragraph1": "Desarrollador <span class='highlight'>Full stack</span> con un enfoque sólido en la creación de aplicaciones <span class='highlight'>escalables y seguras</span>. Mi trayectoria profesional se ha centrado en el desarrollo de <span class='highlight'>plataformas críticas</span> para la gestión de trámites gubernamentales y servicios consulares a nivel internacional." },
       { "paragraph2": "He construido flujos complejos para la adquisición de documentos oficiales y visados, asegurando la <span class='highlight'>integridad de los datos</span> en entornos de alta seguridad e integrando sistemas financieros de gran envergadura como <span class='highlight'>pasarelas de pago</span> y ecosistemas <span class='highlight'>SAP</span>." },
-      { "paragraph3": "Fuera del entorno profesional, me apasiona explorar arquitecturas modernas. Aplico patrones como <span class='highlight'>Arquitectura Hexagonal</span> y <span class='highlight'>DDD</span> en mis proyectos personales, experimentando con tecnologías <span class='highlight'>cloud-native</span> y sistemas de mensajería asíncrona como <span class='highlight'>Kafka</span>." }
+      { "paragraph3": "Fuera del entorno profesional, me apasiona explorar arquitecturas modernas. Aplico patrones como <span class='highlight'>Arquitectura Hexagonal</span> y <span class='highlight'>DDD</span> en mis proyectos personales, experimentando con tecnologías <span class='highlight'>cloud-native</span>, sistemas de mensajería asíncrona como <span class='highlight'>Kafka</span>, orquestación de agentes IA y motores LLM locales como Ollama." }
     ]
   },
   "experience": [
@@ -81,6 +81,27 @@
   ],
   "projects": [
     {
+      "title": "AXON-OS",
+      "description": "Orquestador declarativo de agentes IA con backend Fastify, motor LLM local Ollama y frontend interactivo en Next.js + React Flow.",
+      "tags": [
+        { "name": "TypeScript", "category": "Core Stack", "important": true },
+        { "name": "Node.js", "category": "Core Stack", "important": true },
+        { "name": "Fastify", "category": "Core Stack", "important": true },
+        { "name": "Next.js", "category": "Frontend" },
+        { "name": "React", "category": "Frontend" },
+        { "name": "Tailwind CSS", "category": "Frontend" },
+        { "name": "Prisma", "category": "Tooling & QA", "important": true },
+        { "name": "PostgreSQL", "category": "Data & Ops", "important": true },
+        { "name": "Zod", "category": "Tooling & QA" },
+        { "name": "Docker", "category": "Data & Ops" },
+        { "name": "pnpm", "category": "Tooling & QA" },
+        { "name": "Ollama", "category": "Core Stack" }
+      ],
+      "github": "https://github.com/CandidoAg/AXON-OS",
+      "link": "https://github.com/CandidoAg/AXON-OS",
+      "featured": true
+    },
+    {
       "title": "RetroVault",
       "description": "E-commerce con Arquitectura Hexagonal y DDD. Comunicación asíncrona mediante Kafka y patrón Saga.",
       "tags": [
@@ -108,7 +129,7 @@
       ],
       "github": "https://github.com/CandidoAg/retrovault",
       "link": "#",
-      "featured": true
+      "featured": false
     },
     {
       "title": "NoteStack",
@@ -136,7 +157,7 @@
       "github": "https://github.com/CandidoAg/candido-stack",
       "image": "/images/portfolio",
       "link": "https://candido-stack.vercel.app/",
-      "featured": false
+      "featured": true
     }
   ]
 }

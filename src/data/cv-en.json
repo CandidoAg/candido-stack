@@ -3,12 +3,12 @@
     "name": "Cándido Aguilar",
     "role": "Senior Full Stack Developer",
     "specialty": "Specialized in critical systems.",
-    "description": "My approach combines backend robustness with the agility of modern architectures.",
+    "description": "My approach combines backend robustness with the agility of modern architectures and AI agent orchestration.",
     "featuredSkills": ["Grails", "TypeScript", "React", "Tailwind CSS", "Apache Kafka"],
     "about": [
       { "paragraph1": "<span class='highlight'>Full stack</span> Developer with a solid focus on creating <span class='highlight'>scalable and secure</span> applications. My professional career has focused on developing <span class='highlight'>critical platforms</span> for managing government procedures and international consular services." },
       { "paragraph2": "I have built complex workflows for the acquisition of official documents and visas, ensuring <span class='highlight'>data integrity</span> in high-security environments and integrating large-scale financial systems such as <span class='highlight'>payment gateways</span> and <span class='highlight'>SAP</span> ecosystems." },
-      { "paragraph3": "Outside the professional environment, I am passionate about exploring modern architectures. I apply patterns like <span class='highlight'>Hexagonal Architecture</span> and <span class='highlight'>DDD</span> in my personal projects, experimenting with <span class='highlight'>cloud-native</span> technologies and asynchronous messaging systems like <span class='highlight'>Kafka</span>." }
+      { "paragraph3": "Outside the professional environment, I am passionate about exploring modern architectures. I apply patterns like <span class='highlight'>Hexagonal Architecture</span> and <span class='highlight'>DDD</span> in my personal projects, experimenting with <span class='highlight'>cloud-native</span> technologies, asynchronous messaging systems like <span class='highlight'>Kafka</span>, AI agent orchestration and local LLM engines like Ollama." }
     ]
   },
   "experience": [
@@ -81,6 +81,27 @@
   ],
   "projects": [
     {
+      "title": "AXON-OS",
+      "description": "Declarative AI agent orchestrator with Fastify backend, local Ollama LLM engine, and interactive Next.js + React Flow UI.",
+      "tags": [
+        { "name": "TypeScript", "category": "Core Stack", "important": true },
+        { "name": "Node.js", "category": "Core Stack", "important": true },
+        { "name": "Fastify", "category": "Core Stack", "important": true },
+        { "name": "Next.js", "category": "Frontend" },
+        { "name": "React", "category": "Frontend" },
+        { "name": "Tailwind CSS", "category": "Frontend" },
+        { "name": "Prisma", "category": "Tooling & QA", "important": true },
+        { "name": "PostgreSQL", "category": "Data & Ops", "important": true },
+        { "name": "Zod", "category": "Tooling & QA" },
+        { "name": "Docker", "category": "Data & Ops" },
+        { "name": "pnpm", "category": "Tooling & QA" },
+        { "name": "Ollama", "category": "Core Stack" }
+      ],
+      "github": "https://github.com/CandidoAg/AXON-OS",
+      "link": "https://github.com/CandidoAg/AXON-OS",
+      "featured": true
+    },
+    {
       "title": "RetroVault",
       "description": "E-commerce with Hexagonal Architecture and DDD. Asynchronous communication via Kafka and Saga pattern.",
       "tags": [
@@ -108,7 +129,7 @@
       ],
       "github": "https://github.com/CandidoAg/retrovault",
       "link": "#",
-      "featured": true
+      "featured": false
     },
     {
       "title": "NoteStack",
@@ -136,7 +157,7 @@
       "github": "https://github.com/CandidoAg/candido-stack",
       "image": "/images/portfolio",
       "link": "https://candido-stack.vercel.app/",
-      "featured": false
+      "featured": true
     }
   ]
 }
