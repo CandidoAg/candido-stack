@@ -1,23 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Timeline from '../components/Timeline.astro';
-import Projects from '../components/Projects.astro';
+import HomePage from '../components/HomePage.astro';
 import Footer from '../components/Footer.astro';
-import Skills from '../components/Skills.astro';
-import About from '../components/About.astro';
+import seoData from '../data/seo.json';
 import '../styles/global.css';
+
+const locale = 'es_ES';
+const { title, description } = seoData[locale];
 ---
 
-<Layout title="Cándido | Full-stack Developer">
+<Layout
+  title={title}
+  description={description}
+  pathname="/"
+  image="/images/avatar.webp"
+  locale={locale}
+>
 	<Header />
-	<main>
-		<Hero class="reveal" />
-		<Skills class="reveal" />
-		<Timeline class="reveal" />
-		<Projects class="reveal" />
-		<About class="reveal" />
-	</main>
+	<HomePage locale={locale} />
 	<Footer />
 </Layout>

@@ -1,9 +1,16 @@
 ---
+// src/components/Timeline.astro
 import cvEs from '../data/cv.json';
 import cvEn from '../data/cv-en.json';
 import { Briefcase, GraduationCap, ChevronDown } from 'lucide-react';
 import { Icon } from 'astro-icon/components';
 import { getIconName } from '../utils/icons';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
 
 interface ExperienceItem {
   type: string;
@@ -15,10 +22,10 @@ interface ExperienceItem {
   tags?: { name: string; category: string }[];
 }
 
-const experienceEs = cvEs.experience as ExperienceItem[];
+const experience = locale === 'en_US' ? cvEn.experience as ExperienceItem[] : cvEs.experience as ExperienceItem[];
 const experienceEn = cvEn.experience as ExperienceItem[];
 
-const calculateDuration = (period: string) => {
+const calculateDuration = (period: string, locale: string) => {
   const months: Record<string, number> = {
     'ene': 0, 'feb': 1, 'mar': 2, 'abr': 3, 'may': 4, 'jun': 5,
     'jul': 6, 'ago': 7, 'sept': 8, 'oct': 9, 'nov': 10, 'dic': 11,
@@ -46,11 +53,12 @@ const calculateDuration = (period: string) => {
     monthsDiff += 12;
   }
 
-  // Formateo de salida (puedes ajustar el idioma aquí o hacerlo reactivo)
-  const yearsPart = years > 0 ? `${years} ${years === 1 ? 'año' : 'años'}` : '';
-  const monthsPart = monthsDiff > 0 ? `${monthsDiff} ${monthsDiff === 1 ? 'mes' : 'meses'}` : '';
+  // Formateo de salida basado en locale
+  const isEnglish = locale === 'en_US';
+  const yearsPart = years > 0 ? `${years} ${years === 1 ? (isEnglish ? 'year' : 'año') : (isEnglish ? 'years' : 'años')}` : '';
+  const monthsPart = monthsDiff > 0 ? `${monthsDiff} ${monthsDiff === 1 ? (isEnglish ? 'month' : 'mes') : (isEnglish ? 'months' : 'meses')}` : '';
   
-  return [yearsPart, monthsPart].filter(Boolean).join(' y ');
+  return [yearsPart, monthsPart].filter(Boolean).join(isEnglish ? ' and ' : ' y ');
 };
 ---
 
@@ -61,14 +69,14 @@ const calculateDuration = (period: string) => {
       <div class="flex items-center mb-12 justify-center">
         <h2 class="text-zinc-900 dark:text-white text-3xl font-bold uppercase tracking-tighter"
             data-es="Trayectoria" data-en="Timeline">
-            Trayectoria
+            {locale === 'en_US' ? 'Timeline' : 'Trayectoria'}
         </h2>
       </div>
 
       <div class="absolute left-4 md:left-1/2  h-[calc(100%-5rem)] md:h-[calc(100%-3rem)] w-px bg-zinc-300 dark:bg-white/10"></div>
 
       <div class="space-y-12 md:space-y-16">
-        {experienceEs.map((item, index) => {
+        {experience.map((item, index) => {
           const itemEn = experienceEn[index];
           const isEven = index % 2 === 0;
           const isWork = item.type === 'work';
@@ -114,7 +122,9 @@ const calculateDuration = (period: string) => {
                         
                         <div class="text-zinc-600 dark:text-zinc-400 text-[11px] md:text-[13px] mt-2 font-medium italic">
                           <span class="not-italic block md:inline" data-es={item.period} data-en={itemEn.period}>{item.period}</span>
-                          <span class="block md:inline md:ml-1 not-italic font-bold text-zinc-500 dark:text-zinc-500">({calculateDuration(item.period)})</span>
+                          <span class="block md:inline md:ml-1 not-italic font-bold text-zinc-500 dark:text-zinc-500" data-es={`(${calculateDuration(item.period, 'es_ES')})`} data-en={`(${calculateDuration(item.period, 'en_US')})`}>
+                            ({calculateDuration(item.period, locale)})
+                          </span>
                         </div>
                       </div>
                     </div>

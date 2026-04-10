@@ -1,0 +1,10 @@
+{
+  "es_ES": {
+    "title": "Cándido Aguilar | Full-stack Developer & Astro / React / Node.js",
+    "description": "Desarrollador senior Full stack especializado en sistemas críticos. Experto en TypeScript, React, Apache Kafka, Arquitectura Hexagonal, DDD y orquestación de agentes IA."
+  },
+  "en_US": {
+    "title": "Cándido Aguilar | Full-stack Developer & Astro / React / Node.js",
+    "description": "Senior Full Stack Developer specialized in critical systems. Expert in TypeScript, React, Apache Kafka, Hexagonal Architecture, DDD and AI agent orchestration."
+  }
+}

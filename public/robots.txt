@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://candido-stack.vercel.app/sitemap.xml
+Host: candido-stack.vercel.app

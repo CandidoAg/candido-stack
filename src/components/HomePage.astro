@@ -1,0 +1,22 @@
+---
+// src/components/HomePage.astro
+import Hero from './Hero.astro';
+import Skills from './Skills.astro';
+import Timeline from './Timeline.astro';
+import Projects from './Projects.astro';
+import About from './About.astro';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+---
+
+<main>
+  <Hero class="reveal" />
+  <Skills class="reveal" />
+  <Timeline locale={locale} class="reveal" />
+  <Projects class="reveal" />
+  <About class="reveal" />
+</main>
