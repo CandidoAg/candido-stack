@@ -4,11 +4,11 @@
     "role": "Desarrollador senior Full stack",
     "specialty": "Especializado en sistemas críticos.",
     "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas y la orquestación de agentes IA.",
-    "featuredSkills": ["Grails", "TypeScript", "React", "Tailwind CSS", "Apache Kafka"],
+    "featuredSkills": [".NET 8", "TypeScript", "React", "Tailwind CSS", "Apache Kafka", "Grails"],
     "about": [
-      { "paragraph1": "Desarrollador <span class='highlight'>Full stack</span> con un enfoque sólido en la creación de aplicaciones <span class='highlight'>escalables y seguras</span>. Mi trayectoria profesional se ha centrado en el desarrollo de <span class='highlight'>plataformas críticas</span> para la gestión de trámites gubernamentales y servicios consulares a nivel internacional." },
-      { "paragraph2": "He construido flujos complejos para la adquisición de documentos oficiales y visados, asegurando la <span class='highlight'>integridad de los datos</span> en entornos de alta seguridad e integrando sistemas financieros de gran envergadura como <span class='highlight'>pasarelas de pago</span> y ecosistemas <span class='highlight'>SAP</span>." },
-      { "paragraph3": "Fuera del entorno profesional, me apasiona explorar arquitecturas modernas. Aplico patrones como <span class='highlight'>Arquitectura Hexagonal</span> y <span class='highlight'>DDD</span> en mis proyectos personales, experimentando con tecnologías <span class='highlight'>cloud-native</span>, sistemas de mensajería asíncrona como <span class='highlight'>Kafka</span>, orquestación de agentes IA y motores LLM locales como Ollama." }
+      { "paragraph1": "Desarrollador <span class='highlight'>Senior Full-stack</span> con un enfoque centrado en la ingeniería de software <span class='highlight'>robusta, escalable y segura</span>. Mi trayectoria se ha especializado en el diseño de <span class='highlight'>plataformas críticas</span> internacionales para la gestión de trámites gubernamentales y servicios consulares de alta disponibilidad." },
+      { "paragraph2": "Tengo amplia experiencia construyendo flujos transaccionales complejos y asegurando la <span class='highlight'>integridad de los datos</span> bajo entornos de estricta seguridad, integrando ecosistemas corporativos como <span class='highlight'>SAP</span> y pasarelas de pago de gran envergadura." },
+      { "paragraph3": "Mi evolución técnica me lleva a aplicar con rigor patrones como <span class='highlight'>Arquitectura Hexagonal y DDD</span>, conectando el ecosistema empresarial de <span class='highlight'>.NET 8 / Java</span> con la agilidad cloud-native de Node.js, sistemas de mensajería asíncrona como <span class='highlight'>Apache Kafka</span> y arquitecturas emergentes de <span class='highlight'>orquestación de agentes IA</span> locales." }
     ]
   },
   "experience": [
@@ -81,24 +81,24 @@
   ],
   "projects": [
     {
-      "title": "AXON-OS",
-      "description": "Orquestador declarativo de agentes IA con backend Fastify, motor LLM local Ollama y frontend interactivo en Next.js + React Flow.",
+      "title": "ChronosNote",
+      "description": "Workspace inteligente y offline-first con IA local. Implementa aislamiento estricto de datos por usuario, procesamiento asíncrono en segundo plano y una pipeline robusta de integración continua.",
       "tags": [
-        { "name": "TypeScript", "category": "Core Stack", "important": true },
-        { "name": "Node.js", "category": "Core Stack", "important": true },
-        { "name": "Fastify", "category": "Core Stack", "important": true },
-        { "name": "Next.js", "category": "Frontend" },
-        { "name": "React", "category": "Frontend" },
+        { "name": ".NET 8", "category": "Core Stack", "important": true },
+        { "name": "C#", "category": "Core Stack", "important": true },
+        { "name": "EF Core", "category": "Core Stack", "important": true },
+        { "name": "SQLite", "category": "Data & Ops", "important": true },
+        { "name": "TypeScript", "category": "Core Stack" },
+        { "name": "React", "category": "Frontend", "important": true },
         { "name": "Tailwind CSS", "category": "Frontend" },
-        { "name": "Prisma", "category": "Tooling & QA", "important": true },
-        { "name": "PostgreSQL", "category": "Data & Ops", "important": true },
-        { "name": "Zod", "category": "Tooling & QA" },
-        { "name": "Docker", "category": "Data & Ops" },
+        { "name": "TipTap", "category": "Frontend" },
+        { "name": "Vite", "category": "Tooling & QA" },
         { "name": "pnpm", "category": "Tooling & QA" },
-        { "name": "Ollama", "category": "Core Stack" }
+        { "name": "GitHub Actions", "category": "Data & Ops", "important": true },
+        { "name": "JWT", "category": "Tooling & QA" }
       ],
-      "github": "https://github.com/CandidoAg/AXON-OS",
-      "link": "https://github.com/CandidoAg/AXON-OS",
+      "github": "https://github.com/CandidoAg/ChronosNote",
+      "link": "https://github.com/CandidoAg/ChronosNote",
       "featured": true
     },
     {
@@ -130,6 +130,27 @@
       "github": "https://github.com/CandidoAg/retrovault",
       "link": "#",
       "featured": false
+    },
+    {
+      "title": "AXON-OS",
+      "description": "Orquestador declarativo de agentes IA con backend Fastify, motor LLM local Ollama y frontend interactivo en Next.js + React Flow.",
+      "tags": [
+        { "name": "TypeScript", "category": "Core Stack", "important": true },
+        { "name": "Node.js", "category": "Core Stack", "important": true },
+        { "name": "Fastify", "category": "Core Stack", "important": true },
+        { "name": "Next.js", "category": "Frontend" },
+        { "name": "React", "category": "Frontend" },
+        { "name": "Tailwind CSS", "category": "Frontend" },
+        { "name": "Prisma", "category": "Tooling & QA", "important": true },
+        { "name": "PostgreSQL", "category": "Data & Ops", "important": true },
+        { "name": "Zod", "category": "Tooling & QA" },
+        { "name": "Docker", "category": "Data & Ops" },
+        { "name": "pnpm", "category": "Tooling & QA" },
+        { "name": "Ollama", "category": "Core Stack" }
+      ],
+      "github": "https://github.com/CandidoAg/AXON-OS",
+      "link": "https://github.com/CandidoAg/AXON-OS",
+      "featured": true
     },
     {
       "title": "NoteStack",
