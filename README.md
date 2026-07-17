@@ -1,3 +1,7 @@
+
+
+[![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg)](https://github.com) [![Fastify](https://img.shields.io/badge/fastify-%23000000.svg)](https://github.com)
+
 # 🚀 candido-stack | Portfolio & CV
 
 Este repositorio contiene mi portafolio profesional y currículo interactivo, construido con un enfoque en rendimiento extremo, tipado fuerte y modernización de herramientas.
