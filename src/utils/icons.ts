@@ -19,6 +19,9 @@ const exceptions: Record<string, string> = {
   "Testcontainers": "simple-icons:developmentcontainers",
   "Groovy": "simple-icons:apachegroovy",
   "Java": "simple-icons:openjdk",
+  "Go": "simple-icons:go",
+  "Gin": "simple-icons:databricks", 
+  "Grafana": "simple-icons:grafana",
 };
 
 export function getIconName(tag: string): string {

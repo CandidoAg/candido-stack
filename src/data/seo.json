@@ -1,10 +1,10 @@
 {
   "es_ES": {
-    "title": "Cándido Aguilar | Full-stack Engineer & .NET / Astro / React / Node.js",
-    "description": "Desarrollador senior Full-stack especializado en sistemas críticos. Experto en .NET 8, TypeScript, React, Apache Kafka, Arquitectura Hexagonal, DDD y orquestación asíncrona con IA."
+    "title": "Cándido Aguilar | Full-stack Engineer & Go / .NET / Astro / React",
+    "description": "Desarrollador senior Full-stack especializado en sistemas críticos. Experto en Go, .NET 8, TypeScript, React, Apache Kafka, Microservicios, Zero Trust y orquestación asíncrona."
   },
   "en_US": {
-    "title": "Cándido Aguilar | Full-stack Engineer & .NET / Astro / React / Node.js",
-    "description": "Senior Full Stack Engineer specialized in critical systems. Expert in .NET 8, TypeScript, React, Apache Kafka, Hexagonal Architecture, DDD, and AI asynchronous orchestration."
+    "title": "Cándido Aguilar | Full-stack Engineer & Go / .NET / Astro / React",
+    "description": "Senior Full Stack Engineer specialized in critical systems. Expert in Go, .NET 8, TypeScript, React, Apache Kafka, Microservices, Zero Trust, and asynchronous orchestration."
   }
 }
