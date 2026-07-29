@@ -22,6 +22,9 @@ const exceptions: Record<string, string> = {
   "Go": "simple-icons:go",
   "Gin": "simple-icons:databricks", 
   "Grafana": "simple-icons:grafana",
+  "Cloudflare": "simple-icons:cloudflare",
+  "Minikube": "simple-icons:kubernetes",
+  "Kubernetes": "simple-icons:kubernetes",
 };
 
 export function getIconName(tag: string): string {

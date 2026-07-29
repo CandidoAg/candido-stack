@@ -4,11 +4,11 @@
     "role": "Senior Full Stack Developer",
     "specialty": "Specialized in critical systems.",
     "description": "My approach combines backend robustness with the agility of modern architectures, distributed microservices in Go, and AI agent orchestration.",
-    "featuredSkills": [".NET 8", "Go", "TypeScript", "React", "Apache Kafka", "Docker"],
+    "featuredSkills": [".NET 8", "Go", "Kubernetes", "TypeScript", "React", "Docker"],
     "about": [
       { "paragraph1": "<span class='highlight'>Senior Full-stack Engineer</span> with a core focus on building <span class='highlight'>robust, scalable, and secure</span> software. My career has specialized in designing high-availability <span class='highlight'>critical platforms</span> for international government procedures and consular services." },
       { "paragraph2": "I have extensive experience developing complex transactional workflows and ensuring <span class='highlight'>data integrity</span> under strict security standards, seamlessly integrating enterprise environments like <span class='highlight'>SAP</span> and large-scale payment gateways." },
-      { "paragraph3": "Driven by technical evolution, I rigorously apply <span class='highlight'>Hexagonal Architecture, DDD, and Zero Trust</span> patterns, bridging enterprise ecosystems like <span class='highlight'>.NET 8 / Java / Go</span> with the cloud-native agility of Node.js, asynchronous messaging with <span class='highlight'>Apache Kafka</span>, and emerging local <span class='highlight'>AI agent orchestration</span>." }
+      { "paragraph3": "Driven by technical evolution, I rigorously apply <span class='highlight'>Hexagonal Architecture, DDD, and Zero Trust</span> patterns, bridging enterprise ecosystems like <span class='highlight'>.NET 8 / Java / Go</span> with cloud-native Kubernetes (Minikube) agility, asynchronous messaging with <span class='highlight'>Apache Kafka</span>, and emerging local <span class='highlight'>AI agent orchestration</span>." }
     ]
   },
   "experience": [
@@ -82,18 +82,20 @@
   "projects": [
     {
       "title": "E-Commerce Microservices Platform",
-      "description": "Distributed e-commerce platform built in Go featuring an API Gateway, Zero Trust security (BOLA/IDOR mitigation), Clean Architecture, automated CI/CD pipelines to GitHub Packages (GHCR), and comprehensive observability with Grafana/Loki.",
+      "description": "Distributed e-commerce platform built in Go featuring an API Gateway, Zero Trust security (BOLA/IDOR mitigation), Clean Architecture, Kubernetes (Minikube) orchestration, PowerShell smart automation scripts, secure Cloudflare tunnels, and comprehensive observability with Grafana/Loki.",
       "tags": [
         { "name": "Go", "category": "Core Stack", "important": true },
         { "name": "Gin", "category": "Core Stack", "important": true },
+        { "name": "Kubernetes", "category": "Data & Ops", "important": true },
         { "name": "Docker", "category": "Data & Ops", "important": true },
+        { "name": "Cloudflare", "category": "Data & Ops", "important": true },
         { "name": "SQLite", "category": "Data & Ops", "important": true },
         { "name": "Grafana", "category": "Tooling & QA", "important": true },
         { "name": "GitHub Actions", "category": "Data & Ops", "important": true },
         { "name": "JWT", "category": "Tooling & QA" }
       ],
-      "github": "https://github.com/CandidoAg",
-      "link": "https://github.com/CandidoAg",
+      "github": "https://github.com/CandidoAg/go-ecommerce-microservices",
+      "link": "https://github.com/CandidoAg/go-ecommerce-microservices",
       "featured": true
     },
     {

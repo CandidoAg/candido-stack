@@ -4,11 +4,11 @@
     "role": "Desarrollador senior Full stack",
     "specialty": "Especializado en sistemas críticos.",
     "description": "Mi enfoque combina la robustez del backend con la agilidad de las arquitecturas modernas, microservicios distribuidos en Go y la orquestación de agentes IA.",
-    "featuredSkills": [".NET 8", "Go", "TypeScript", "React", "Apache Kafka", "Docker"],
+    "featuredSkills": [".NET 8", "Go", "Kubernetes", "TypeScript", "React", "Docker"],
     "about": [
       { "paragraph1": "Desarrollador <span class='highlight'>Senior Full-stack</span> con un enfoque centrado en la ingeniería de software <span class='highlight'>robusta, escalable y segura</span>. Mi trayectoria se ha especializado en el diseño de <span class='highlight'>plataformas críticas</span> internacionales para la gestión de trámites gubernamentales y servicios consulares de alta disponibilidad." },
       { "paragraph2": "Tengo amplia experiencia construyendo flujos transaccionales complejos y asegurando la <span class='highlight'>integridad de los datos</span> bajo entornos de estricta seguridad, integrando ecosistemas corporativos como <span class='highlight'>SAP</span> y pasarelas de pago de gran envergadura." },
-      { "paragraph3": "Mi evolución técnica me lleva a aplicar con rigor patrones como <span class='highlight'>Arquitectura Hexagonal, DDD y Zero Trust</span>, conectando el ecosistema empresarial de <span class='highlight'>.NET 8 / Java / Go</span> con la agilidad cloud-native de Node.js, sistemas de mensajería asíncrona como <span class='highlight'>Apache Kafka</span> y arquitecturas emergentes de <span class='highlight'>orquestación de agentes IA</span> locales." }
+      { "paragraph3": "Mi evolución técnica me lleva a aplicar con rigor patrones como <span class='highlight'>Arquitectura Hexagonal, DDD y Zero Trust</span>, conectando el ecosistema empresarial de <span class='highlight'>.NET 8 / Java / Go</span> con la agilidad cloud-native de Kubernetes (Minikube), mensajería asíncrona como <span class='highlight'>Apache Kafka</span> y arquitecturas emergentes de <span class='highlight'>orquestación de agentes IA</span> locales." }
     ]
   },
   "experience": [
@@ -82,11 +82,13 @@
   "projects": [
     {
       "title": "E-Commerce Microservices Platform",
-      "description": "Plataforma de comercio electrónico distribuida en Go con API Gateway, seguridad Zero Trust (mitigación BOLA/IDOR), Clean Architecture, pipelines CI/CD automatizados a GitHub Packages (GHCR) y observabilidad completa con Grafana/Loki.",
+      "description": "Plataforma de comercio electrónico distribuida en Go con API Gateway, seguridad Zero Trust (mitigación BOLA/IDOR), Clean Architecture, orquestación en Kubernetes (Minikube), automatización con scripts inteligentes en PowerShell, túneles seguros con Cloudflare y observabilidad con Grafana/Loki.",
       "tags": [
         { "name": "Go", "category": "Core Stack", "important": true },
         { "name": "Gin", "category": "Core Stack", "important": true },
+        { "name": "Kubernetes", "category": "Data & Ops", "important": true },
         { "name": "Docker", "category": "Data & Ops", "important": true },
+        { "name": "Cloudflare", "category": "Data & Ops", "important": true },
         { "name": "SQLite", "category": "Data & Ops", "important": true },
         { "name": "Grafana", "category": "Tooling & QA", "important": true },
         { "name": "GitHub Actions", "category": "Data & Ops", "important": true },
