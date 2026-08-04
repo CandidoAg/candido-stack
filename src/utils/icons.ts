@@ -15,7 +15,7 @@ const exceptions: Record<string, string> = {
   "JWT": "jwt",
   "GitHub Actions": "simple-icons:githubactions",
   "EF Core": "simple-icons:dotnet",       
-  "TipTap": "simple-icons:prosemirror",
+  "TipTap": "simple-icons:markdown",
   "Testcontainers": "simple-icons:developmentcontainers",
   "Groovy": "simple-icons:apachegroovy",
   "Java": "simple-icons:openjdk",
