@@ -45,7 +45,9 @@ const getPara = (item: any) => Object.values(item)[0] as string;
   </div>
 </section>
 
-<style is:global>
+<style is:global lang="postcss">
+  @reference "tailwindcss";
+
   .about-text .highlight {
     @apply font-bold text-zinc-900 dark:text-zinc-100;
     position: relative;

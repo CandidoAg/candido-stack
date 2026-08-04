@@ -102,7 +102,9 @@ const htmlLang = locale.split(/[-_]/)[0];
     </body>
 </html>
 
-<style is:global>
+<style lang="postcss" is:global>
+  @reference "tailwindcss";
+
     :root {
         --font-inter: 'Inter Variable', sans-serif;
     }

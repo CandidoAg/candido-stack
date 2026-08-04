@@ -141,7 +141,9 @@ const getPartitionedTags = (tags: Tag[], isFeatured: boolean) => {
   </div>
 </section>
 
-<style>
+<style lang="postcss">
+  @reference "tailwindcss";
+
   .hidden-tag.is-open {
     display: flex !important;
     opacity: 1 !important;
